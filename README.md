@@ -1,4 +1,4 @@
-This project (https://sd3415.github.io/DiabetesDataAnalysis/) is about extracting insights from this dataset either through visualization or summary statistics.
+This project (https://sd3415.github.io/DiabetesDataAnalysis/) is about extracting insights from a healthcare dataset either through visualization or summary statistics.
 
 We came across recent research on non-invasive type 1 diabetes management. D1NAMO (https://zenodo.org/record/1421616#.X3G7wpMzadY) dataset has been approved by the scientific community to allow for the research and analysis of diabetes management.
 
