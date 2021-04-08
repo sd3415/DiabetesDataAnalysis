@@ -1,6 +1,6 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAMES HERE"
+title: "Data analysis of type 1 diabetes management"
+author: "Shivani Modi and Sriram Dommeti"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
