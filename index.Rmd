@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Introduction test
+# Introduction
 
 We are interested in exploratory data analysis of a health care data set.
 
