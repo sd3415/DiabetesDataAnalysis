@@ -1,1 +1,6 @@
 # Missing values
+
+The data set has missing values, because of the following cases during the data collection period:
+
+ - Some people did not include pictures of all meals
+ - In some cases, people forgot to note down the measured glycemic values or they had problems with the BioHarness wearable device
