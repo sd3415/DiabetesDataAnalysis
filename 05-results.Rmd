@@ -9,8 +9,7 @@ library(tidyverse)
 library(ggplot2)
 
 healthy_df <- read.csv('data/healthy_patients_glucose.csv', header = TRUE, na.strings = "")
-# excluding patient number 12 data as he is a diabetes patient
-healthy_df <- healthy_df %>% filter(patient != 12)
+
 df <- healthy_df %>%
   mutate(type = case_when(
     type == 'BB' ~ 'Before Breakfast',
