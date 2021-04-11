@@ -1,14 +1,14 @@
 # Results
 
-## Distribution of glucose measurements
+## Trends in glucose levels
 
-To understand how the glucose measurement values vary before and after each meal, we can look at the boxplot of glucose levels grouped by different categories
+To understand how the glucose measurement values vary before and after each meal, we can look at the boxplot of glucose levels grouped by different categories, in this data set there is a indicator for whether the measurement value is before or after the meal, for the healthy group data set.
 
 ```{r}
 library(tidyverse)
 library(ggplot2)
 
-healthy_df <- read.csv('data/healthy_patients_glucose.csv', header = TRUE, na.strings = "")
+healthy_df <- read.csv('data/healthy_patients_glucose.csv', na.strings = "")
 
 df <- healthy_df %>%
   mutate(type = case_when(
@@ -35,3 +35,23 @@ ggplot(df, aes(x = type, y = glucose)) +
 ```
 
 We can see that on an average glucose levels tend to be higher in the measurements which are taken 2 hours after each meal, compared to the corresponding values before eating.
+
+As we have glucose measurement every 5 minutes for the diabetes patients data set, let us now look into variation in glucose levels for each of the diabetes patient during the data collection period:
+
+```{r}
+diabetes_df <- read.csv('data/diabetes_patients_glucose.csv', na.strings = "")
+diabetes_df$patient <- as.factor(diabetes_df$patient)
+diabetes_df$glucose <- as.numeric(diabetes_df$glucose)
+ggplot(diabetes_df, aes(x = patient, y = glucose)) +
+  geom_boxplot() +
+  xlab("patient") +
+  ylab("glucose level [mmol/l]") +
+  ggtitle("Glucose measurements for each diabetes patient") +
+  theme_grey(16) +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+Looking at these distributions of glucose levels for healthy group and diabetes patients, it is usual that glucose levels for people with diabetes tend to be higher than healthy group, due to the fact that in case of type 1 diabetes, pancreas produce little or no insulin and as a result glucose builds up in the bloodstream as there is scarcity of insulin to let glucose into the cells. 
+
+We see that patient number 9 tend to have less glucose levels compared to others, so we can infer that patient 9 is more prone to have glucose levels that can trigger hypoglycemia (blood sugar levels drop) events causing danger, as 3.9 mmol/l is the commonly used lower threshold for normal glucose.
+

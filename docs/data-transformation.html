@@ -76,7 +76,7 @@
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#distribution-of-glucose-measurements"><i class="fa fa-check"></i><b>5.1</b> Distribution of glucose measurements</a></li>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#trends-in-glucose-levels"><i class="fa fa-check"></i><b>5.1</b> Trends in glucose levels</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
@@ -103,6 +103,8 @@
 <h1><span class="header-section-number">Chapter 3</span> Data transformation</h1>
 <p>Note:</p>
 <p>One person in the healthy people subset of this data set has diabetes type 1, he is included in the healthy people set because he followed protocol same as healthy people for data acquisition i.e. he has not worn a Continuous Glucose Monitoring (CGM) device like other patients, so for the purpose of meaningful analysis, we are excluding this person from summary statistics or data visualizations used in the analysis.</p>
+<p>After downloading the original data set from data source (<a href="https://zenodo.org/record/1421616#.X3G7wpMzadY" class="uri">https://zenodo.org/record/1421616#.X3G7wpMzadY</a>), and then un-compressing the folder, we get a huge data of about ~ 64 GB in size, so we are only including the relevant data files used here after pre-processing as described below.</p>
+<p>Please refer to pre-process_script.R file in the github repo for data transformation code that generates data files used in this present analysis.</p>
 <p>Data transformation steps:</p>
 <ul>
 <li>In the original data set used for this analysis, data for each person considered in the study is given separately in different folders. We have started with aggregating the relevant data for the analysis here, for example we have put together glucose measurements of all the people in healthy group into a single .csv file adding a column indicating patient number for reference, similarly aggregated all the glucose measurements data of diabetes patients into a single .csv file</li>
