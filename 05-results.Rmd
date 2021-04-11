@@ -1,1 +1,38 @@
 # Results
+
+## Distribution of glucose measurements
+
+To understand how the glucose measurement values vary before and after each meal, we can look at the boxplot of glucose levels grouped by different categories
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+
+healthy_df <- read.csv('data/healthy_patients_glucose.csv', header = TRUE, na.strings = "")
+# excluding patient number 12 data as he is a diabetes patient
+healthy_df <- healthy_df %>% filter(patient != 12)
+df <- healthy_df %>%
+  mutate(type = case_when(
+    type == 'BB' ~ 'Before Breakfast',
+    type == 'AB' ~ 'After Breakfast',
+    type == 'BL' ~ 'Before Lunch',
+    type == 'AL' ~ 'After Lunch',
+    type == 'BD' ~ 'Before Dinner',
+    type == 'AD' ~ 'After Dinner'
+  ))
+df <- na.omit(df)
+df$type <- factor(df$type, levels = c("Before Breakfast", "After Breakfast",
+                                      "Before Lunch", "After Lunch",
+                                      "Before Dinner", "After Dinner"))
+df$glucose <- as.numeric(df$glucose)
+ggplot(df, aes(x = type, y = glucose)) +
+  geom_boxplot() +
+  xlab("measurement category") +
+  ylab("glucose level [mmol/l]") +
+  ggtitle("Glucose measurements for healthy group by categories") +
+  coord_flip() +
+  theme_grey(13) +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+We can see that on an average glucose levels tend to be higher in the measurements which are taken 2 hours after each meal, compared to the corresponding values before eating.

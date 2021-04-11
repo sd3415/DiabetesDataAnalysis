@@ -3,5 +3,6 @@ data-sources
 data-transformation
 missing-values
 results
+distribution-of-glucose-measurements
 interactive-component
 conclusion
