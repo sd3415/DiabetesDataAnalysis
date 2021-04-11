@@ -47,7 +47,7 @@ ggplot(diabetes_df, aes(x = patient, y = glucose)) +
   xlab("patient") +
   ylab("glucose level [mmol/l]") +
   ggtitle("Glucose measurements for each diabetes patient") +
-  theme_grey(16) +
+  theme_grey(13) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
@@ -55,3 +55,30 @@ Looking at these distributions of glucose levels for healthy group and diabetes 
 
 We see that patient number 9 tend to have less glucose levels compared to others, so we can infer that patient 9 is more prone to have glucose levels that can trigger hypoglycemia (blood sugar levels drop) events causing danger, as 3.9 mmol/l is the commonly used lower threshold for normal glucose.
 
+## Does changes in glucose level correlate with changes in ECG signals?
+
+Now let us look at glucose level variation with time for patient 9 on a specific day and then compare with other sensor data available, in order to detect patterns or correlations.
+
+```{r}
+library(lubridate)
+
+p9 <- diabetes_df %>% filter(patient == 9)
+p9$datetime = paste(p9$date, p9$time)
+# retaining only the data where we have continuous measurements to detect patterns
+p9_2 <- p9 %>% filter(date == '2014-10-03')
+# excluding manual measurements
+p9_2 <- p9_2 %>% filter(type != 'manual')
+p9_2 <- p9_2 %>%
+  mutate(datetime = ymd_hms(datetime),
+         date = format(datetime, "%b %d")) 
+# time series plot with horizontal line indicating hypoglycemia threshold
+g <- ggplot(p9_2, aes(datetime, glucose)) + geom_point()
+g + geom_line(color = "grey50") +
+  geom_hline(yintercept = 3.9, linetype = "dashed", color = "red") +
+  ggtitle("Glucose level with time for patient 9") +
+  labs(x = "time", y = "glucose level [mmol/l]") +
+  theme_grey(13) +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+We see hypoglycemic events from the above figure i.e when glucose level is less than 3.9 mmol/l
