@@ -44,4 +44,10 @@ ggplot(df_missing_days, aes(x = Patient_ID, y = number_of_days, fill = Person)) 
 ```
 
 - Some people did not include pictures of all meals
+```{r}
+library(extracat)
+#devtools::install_github("heike/extracat")
+sensor_df <- read.csv('data/sensor_data.csv')
 
+extracat::visna(sensor_df)
+```

@@ -273,3 +273,38 @@ diabetes_df2 <- na.omit(diabetes_df2)
 
 write.csv(diabetes_glucose, "./data/d3_plot_diabetes_glucose.csv", row.names = FALSE)
 write.csv(diabetes_df2, "./data/d3_plot_diabetes_insulin.csv", row.names = FALSE)
+
+# reading other sensors data for all people for use in this analysis
+library(tidyverse)
+library(lubridate)
+
+j= 0
+datalist1 = list()
+for (file_path in file_locations) {
+  j = j+1
+  x <- paste(file_path,"/sensor_data",sep="")
+  y <-list.dirs(path = x, full.names = TRUE, recursive = TRUE)
+  csv_files <- list.files(path = y,pattern = "*Summary.csv",full.names = TRUE)
+  i = 0
+  datalist = list()
+  for (k in csv_files){
+    sensor_data <- data.frame(read.csv(k,sep=","))
+    df <- sensor_data[c("Time", "HR", "BR", "Activity", "ECGAmplitude")]
+    df <- df %>%
+      mutate(Time = substr(Time, 1, 16))
+    df <- df %>%
+      group_by(Time) %>%
+      summarise(HR = max(HR), BR = max(BR),
+                Activity = max(Activity), ECGAmplitude = max(ECGAmplitude))
+    i =i+1
+    datalist[[i]] <- df
+    
+  }
+datalist1[[j]] <- datalist[[i]]
+}
+sendor_complete_data= do.call(rbind, datalist1)
+sendor_complete_data[sendor_complete_data==0] <-- NA
+write.csv(sendor_complete_data, "./data/sensor_data.csv", row.names = FALSE)
+
+
+
