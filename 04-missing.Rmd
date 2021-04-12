@@ -1,19 +1,47 @@
 # Missing values
 
 The data set has missing values, because of the following cases during the data collection period:
+  
+  
+  
+  - In some cases, people forgot to note down the measured glycemic values or they had problems with the BioHarness wearable device
 
- - In some cases, people forgot to note down the measured glycemic values or they had problems with the BioHarness wearable device
- - Some people did not include pictures of all meals
- 
- 
+People were asked to wear the BioHarness sensor during the 4 days when these measurements were taken.
+The following graph has a threshold for 4 days to check how many people didn't record for all 4 days.
+We can observe that healthy people recorded their glucose readings for all 4 days in fact some for even more than 4 days. 
+One of the diabetic patient recorded glucose values for two days. In general, the glucose recordings doesn't have major missing values.
 ```{r}
+
+library(tidyverse)
+library(ggplot2)
 healthy_df <- read.csv('data/healthy_patients_glucose.csv', na.strings = "")
-colSums(is.na(healthy_df))
-
 dia_df <- read.csv('data/diabetes_patients_glucose.csv',na.strings = "")
-colSums(is.na(dia_df))
-
 sensor <- read.csv('data/diabetes_patient9_sensor_data.csv',na.strings = "")
-colSums(is.na(sensor))
+#colSums(is.na(sensor))
 
+dia_df %>%
+  group_by(patient) %>%
+  summarise(number_of_days = n_distinct(date)) -> distinct_dates_dia
+
+healthy_df %>%
+  group_by(patient) %>%
+  summarise(number_of_days = n_distinct(date)) -> distinct_dates_healthy
+
+distinct_dates_dia$Person <- "Diabetic"
+distinct_dates_healthy$Person <- "Healthy"
+
+df_missing_days <- rbind(distinct_dates_healthy, distinct_dates_dia)
+df_missing_days$Patient_ID <- seq.int(nrow(df_missing_days))
+
+ggplot(df_missing_days, aes(x = Patient_ID, y = number_of_days, fill = Person)) +
+  geom_col(position = "identity")+
+  coord_flip()+
+  geom_hline(yintercept = 4, size = 1, colour = "black",
+             linetype = "dashed")+
+  ggtitle("Number of days with glucose recordings")+
+  ylab("Days of Glucose recordings") +
+  xlab("People ID") 
 ```
+
+- Some people did not include pictures of all meals
+
