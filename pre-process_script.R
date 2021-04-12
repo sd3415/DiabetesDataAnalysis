@@ -125,9 +125,13 @@ for(i in 1:9) {
   path <- paste0(folder_location,"/diabetes_subset/00",i, "/food.csv")
   food_data<-data.frame(read.csv(path,header=T,sep=','))
   food_data <-  food_data[!is.na(food_data$calories), ]
+  food_data$balance <- gsub("Unbalance", 0, food_data$balance)
+  food_data$balance <- gsub("Balance", 1, food_data$balance)
+  food_data$balance <- as.numeric(food_data$balance)
+  food_quality <- c(mean(food_data$balance))
   cal <- c(mean(food_data$calories))
   person <- c(i)
-  df <- data.frame(person,cal)
+  df <- data.frame(person,cal,food_quality)
   df$i <- i  
   datalist[[i]] <- df
 }
@@ -148,7 +152,7 @@ for(i in 1:9) {
 
 final_data_dia_glu= do.call(rbind, datalist)
 final_data_glu_cal_dia = merge(x = final_data_dia_glu, y = final_data_dia_cal, by = "person")
-keeps <- c("person", "cal.x", "cal.y")
+keeps <- c("person", "cal.x", "cal.y","food_quality")
 final_data_glu_cal_dia = final_data_glu_cal_dia[keeps]
 names(final_data_glu_cal_dia)[2] <- "glucose"
 names(final_data_glu_cal_dia)[3] <- "calories"
@@ -168,9 +172,13 @@ for(i in 1:20) {
   food_data<-data.frame(read.csv(path,header=T,sep=','))
   food_data$calories <- as.numeric(food_data$calories)
   food_data <-  food_data[!is.na(food_data$calories), ]
+  food_data$balance <- gsub("Unbalance", 0, food_data$balance)
+  food_data$balance <- gsub("Balance", 1, food_data$balance)
+  food_data$balance <- as.numeric(food_data$balance)
+  food_quality <- c(mean(food_data$balance))
   cal <- c(mean(food_data$calories))
   person <- c(i)
-  df <- data.frame(person,cal)
+  df <- data.frame(person,cal,food_quality)
   df$i <- i  
   datalist[[i]] <- df
 }
@@ -196,13 +204,15 @@ for(i in 1:20) {
 
 final_data_healthy_glu= do.call(rbind, datalist)
 final_data_glu_cal_healthy = merge(x = final_data_healthy_glu, y = final_data_healthy_cal, by = "person")
-keeps <- c("person", "cal.x", "cal.y")
+keeps <- c("person", "cal.x", "cal.y","food_quality")
 final_data_glu_cal_healthy = final_data_glu_cal_healthy[keeps]
 names(final_data_glu_cal_healthy)[2] <- "glucose"
 names(final_data_glu_cal_healthy)[3] <- "calories"
 labels <- 'Healthy'
 final_data_glu_cal_healthy <- cbind(final_data_glu_cal_healthy, Person = labels)
 food_glu_final_df <- rbind(final_data_glu_cal_healthy,final_data_glu_cal_dia)
+food_glu_final_df$food_quality[is.na(food_glu_final_df$food_quality)] <- 0.5
+food_glu_final_df <-food_glu_final_df[food_glu_final_df$person != 12, ]
 write.csv(food_glu_final_df, "./data/individuals_glucose_food_intake.csv", row.names = FALSE)
 
 

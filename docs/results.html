@@ -24,7 +24,7 @@
 <meta name="author" content="Shivani Modi and Sriram Dommeti" />
 
 
-<meta name="date" content="2021-04-11" />
+<meta name="date" content="2021-04-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -79,6 +79,7 @@
 <li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#understanding-the-sample-considered-for-this-study"><i class="fa fa-check"></i><b>5.1</b> Understanding the sample considered for this study</a></li>
 <li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#trends-in-glucose-levels"><i class="fa fa-check"></i><b>5.2</b> Trends in glucose levels</a></li>
 <li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#does-changes-in-glucose-level-correlate-with-changes-in-ecg-signals"><i class="fa fa-check"></i><b>5.3</b> Does changes in glucose level correlate with changes in ECG signals?</a></li>
+<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#impact-of-calories-and-food-balance-on-the-glucose-levels"><i class="fa fa-check"></i><b>5.4</b> Impact of calories and food balance on the glucose levels</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
@@ -126,6 +127,17 @@
 <p>Looking at the overall plot, we see that changes in glucose level doesn’t correlate well with changes in other measurements here. Now let us at only glucose level and ECG signal data variation with time.</p>
 <p><img src="finalproj_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>We do see that, when hypoglycemia events occurred, there seems to be sudden fluctuations in the ECG signal. This needs to be explored further considering new data collection in the future, as present data set has less number of hypoglycemic events for the diabetes patients.</p>
+</div>
+<div id="impact-of-calories-and-food-balance-on-the-glucose-levels" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Impact of calories and food balance on the glucose levels</h2>
+<p>Having food information for each patient as well as their physiological signals — especially glucose — could be used for diet advice.Advice can either be in regard to the global health condition or in regard to glucose levels for decreasing risks for type 1 diabetes patients.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>The graph shows that diabetic patients attitude toward food, food control by consuming balanced diet was inadequate compared to healthy people. Reasons behind it can be eating disorders and eating disorder symptoms in T1DM patients or due to lack of awareness about the importance of diet planning and limiting cholesterol intake.</p>
+<p>D1NAMO dataset has been annotated by a dietitian with description of the food, an estimation of the number of calories, and an indication about the Food Balance and Food Quality.Food Quality is related to the amount of food items that should be ideally sporadically consumed in a meal. This information is valuable in the context of calories estimation as it impacts glucose levels.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>We can observe that healthy people consuming high calorie food have moderate and normal glucose level. The moderated glucose level is also impacted by the Quality of food. They tend to have high quality of food intake.
+Whereas diabetic people have a comparatively high range of glucose level even though calorie intake is regulated. This can be due to low quality of food intake i.e unbalanced food. As in type1 diabetes the pancreas produces little or no insulin. Food intake causes sudden increase in glucose level and insulin injected takes time to show its effect. We can see the general trend of high glucose level.</p>
+<p>We see that patient number 9 tends to have less glucose levels compared to others. Poor quality of food can also be a factor for hypoglycemia. As dietician has annotated food images taking in account individual cases. Person 9 has all the meals in an unbalanced category with very less sugar intake.</p>
 
 </div>
 </div>

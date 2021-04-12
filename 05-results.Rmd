@@ -152,4 +152,35 @@ ggplot(p9_2_sub, aes(x = datetime, y = value)) +
 
 We do see that, when hypoglycemia events occurred, there seems to be sudden fluctuations in the ECG signal. This needs to be explored further considering new data collection in the future, as present data set has less number of hypoglycemic events for the diabetes patients.
 
+## Impact of calories and food balance on the glucose levels
+
+Having food information for each patient as well as their physiological signals — especially glucose — could be used for diet advice.Advice can either be in regard to the global health condition or in regard to glucose levels for decreasing risks for type 1 diabetes patients.
+
+
+```{r}
+food_data <- read.csv('data/individuals_food_balanced_unbalanced.csv', na.strings = "")
+vcd::mosaic(Category ~ Person, 
+            highlighting_fill = c("grey90", "cornflowerblue"),
+            food_data)
+```
+
+The graph shows that diabetic patients attitude toward food, food control by consuming balanced diet was inadequate compared to healthy people. Reasons behind it can be eating disorders and eating disorder symptoms in T1DM patients or due to lack of awareness about the importance of diet planning and limiting cholesterol intake.
+
+D1NAMO dataset has been annotated by a dietitian with description of the food, an estimation of the number of calories, and an indication about the Food Balance and Food Quality.Food Quality is related to the amount of food items that should be ideally sporadically consumed in a meal. This information is valuable in the context of calories estimation as it impacts glucose levels.
+
+```{r}
+library(ggplot2)
+library(GGally)
+food_glu_final_df <- read.csv('data/individuals_glucose_food_intake.csv', na.strings = "")
+ggparcoord(food_glu_final_df,scale ="uniminmax",order = "allClass",columns=2:4, groupColumn = 5, alphaLines = 0.5)
+```
+
+We can observe that healthy people consuming high calorie food have moderate and normal glucose level. The moderated glucose level is also impacted by the Quality of food. They tend to have high quality of food intake.
+Whereas diabetic people have a comparatively high range of glucose level even though calorie intake is regulated. This can be due to low quality of food intake i.e unbalanced food. As in type1 diabetes the pancreas produces little or no insulin. Food intake causes sudden increase in glucose level and insulin injected takes time to show its effect. We can see the general trend of high glucose level.
+
+We see that patient number 9 tends to have less glucose levels compared to others. Poor quality of food can also be a factor for hypoglycemia. As dietician has annotated food images taking in account individual cases. Person 9 has all the meals in an unbalanced category with very less sugar intake. 
+
+
+
+
 
