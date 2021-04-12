@@ -238,6 +238,7 @@ healthy_df2$datetime = paste(healthy_df2$date, healthy_df2$time)
 healthy_df2 <- healthy_df2[c("patient","datetime","description","calories","balance","quality")]
 healthy_df2$calories <- as.numeric(healthy_df2$calories)
 
+# getting glucoses values for healthy patients
 healthy_glucose <- read.csv('./data/healthy_patients_glucose.csv', na.strings = "")
 healthy_glucose$datetime = paste(healthy_glucose$date, healthy_glucose$time)
 healthy_glucose$glucose <- as.numeric(healthy_glucose$glucose)
@@ -247,3 +248,28 @@ healthy_glucose <- na.omit(healthy_glucose)
 write.csv(healthy_glucose, "./data/d3_plot_glucose.csv", row.names = FALSE)
 write.csv(healthy_df2, "./data/d3_plot_food.csv", row.names = FALSE)
 
+# getting glucose values for diabetes patients
+diabetes_glucose <- read.csv('./data/diabetes_patients_glucose.csv', na.strings = "")
+diabetes_glucose$datetime = paste(diabetes_glucose$date, diabetes_glucose$time)
+diabetes_glucose$glucose <- as.numeric(diabetes_glucose$glucose)
+diabetes_glucose <- diabetes_glucose[c("patient","datetime","glucose")]
+
+# getting insulin values for diabetes patients
+file_locations <- paste(folder_location,"/diabetes_subset/","00",2:9,sep="")
+patient_count <- 1
+diabetes_df2 <- read.csv(paste(folder_location,"/diabetes_subset/001/insulin.csv",sep=""))
+diabetes_df2 <- diabetes_df2[c(1:3)]
+diabetes_df2$patient <- patient_count
+for (file_path in file_locations) {
+  patient_count <- patient_count + 1
+  temp_df <- read.csv(paste(file_path,"insulin.csv",sep="/"))
+  temp_df <- temp_df[c(1:3)]
+  temp_df$patient <- patient_count
+  diabetes_df2 <- rbind(diabetes_df2, temp_df)
+}
+diabetes_df2$datetime = paste(diabetes_df2$date, diabetes_df2$time)
+diabetes_df2 <- diabetes_df2[c("patient","datetime","fast_insulin")]
+diabetes_df2 <- na.omit(diabetes_df2)
+
+write.csv(diabetes_glucose, "./data/d3_plot_diabetes_glucose.csv", row.names = FALSE)
+write.csv(diabetes_df2, "./data/d3_plot_diabetes_insulin.csv", row.names = FALSE)
