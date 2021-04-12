@@ -107,34 +107,40 @@
 <div id="understanding-the-sample-considered-for-this-study" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Understanding the sample considered for this study</h2>
 <p>In this data set, clinical data such as age, gender, height and weight are not referenced with corresponding person’s other data in this data set. so here we are just looking at the overall characteristics of the people considered in this study, just to get an understanding of biases if any in selecting the sample for the data acquisition.</p>
+<p>We will start with understanding the relationships between BMI and Health Status. We calculated the BMI from the given data of height and weight. Using the equation ((Weight)/(Height)^2)* 10,000. We used BMI as it is designed for use as a simple means of classifying average sedentary (physically inactive) populations, with an average body composition.</p>
+<p>The value recommendations are as follow: a BMI from 18.5 up to 25 may indicate optimal weight, a BMI lower than 18.5 suggests the person is underweight, a number from 25 up to 30 may indicate the person is overweight, and a number from 30 upwards suggests the person is obese.</p>
+<p>The data doesn’t show a relation between overweight and obesity to diabetes. As we have majority of diabetic patient in normal rage of BMI. Only 3 out of 8 people are in overweight category. Though we can’t make a conclusion that BMI and diabetes are not related as the sample size of diabetic patient in our dataset is limited.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Here is a faceted histograms plot to understand the relationships between Age, Gender and Health Status. It can be observed that this dataset is a bit biased towards younger and middle age men. We have only two people with age greater than 50 years. Both of them being female and diabetic. Young males with diabetes are present in the dataset whereas young females (less than 35 years) are mostly healthy.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 <div id="trends-in-glucose-levels" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Trends in glucose levels</h2>
 <p>To understand how the glucose measurement values vary before and after each meal, we can look at the boxplot of glucose levels grouped by different categories, in this data set there is a indicator for whether the measurement value is before or after the meal, for the healthy group data set.</p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>We can see that on an average glucose levels tend to be higher in the measurements which are taken 2 hours after each meal, compared to the corresponding values before eating.</p>
 <p>As we have glucose measurement every 5 minutes for the diabetes patients data set, let us now look into variation in glucose levels for each of the diabetes patient during the data collection period:</p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Looking at these distributions of glucose levels for healthy group and diabetes patients, it is usual that glucose levels for people with diabetes tend to be higher than healthy group, due to the fact that in case of type 1 diabetes, pancreas produce little or no insulin and as a result glucose builds up in the bloodstream as there is scarcity of insulin to let glucose into the cells.</p>
 <p>We see that patient number 9 tend to have less glucose levels compared to others, so we can infer that patient 9 is more prone to have glucose levels that can trigger hypoglycemia (blood sugar levels drop) events causing danger, as 3.9 mmol/l is the commonly used lower threshold for normal glucose.</p>
 </div>
 <div id="does-changes-in-glucose-level-correlate-with-changes-in-ecg-signals" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Does changes in glucose level correlate with changes in ECG signals?</h2>
 <p>Now let us look at glucose level variation with time for patient 9 on a specific day and then compare with other sensor data available, in order to detect patterns or correlations.</p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>We see hypoglycemic events from the above figure i.e when glucose level is less than 3.9 mmol/l. To clearly understand correlations for changes in values, let us look at relative value plots of glucose levels and other measurements collectively.</p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>Looking at the overall plot, we see that changes in glucose level doesn’t correlate well with changes in other measurements here. Now let us at only glucose level and ECG signal data variation with time.</p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>We do see that, when hypoglycemia events occurred, there seems to be sudden fluctuations in the ECG signal. This needs to be explored further considering new data collection in the future, as present data set has less number of hypoglycemic events for the diabetes patients.</p>
 </div>
 <div id="impact-of-calories-and-food-balance-on-the-glucose-levels" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Impact of calories and food balance on the glucose levels</h2>
 <p>Having food information for each patient as well as their physiological signals — especially glucose — could be used for diet advice.Advice can either be in regard to the global health condition or in regard to glucose levels for decreasing risks for type 1 diabetes patients.</p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>The graph shows that diabetic patients attitude toward food, food control by consuming balanced diet was inadequate compared to healthy people. Reasons behind it can be eating disorders and eating disorder symptoms in T1DM patients or due to lack of awareness about the importance of diet planning and limiting cholesterol intake.</p>
 <p>D1NAMO dataset has been annotated by a dietitian with description of the food, an estimation of the number of calories, and an indication about the Food Balance and Food Quality.Food Quality is related to the amount of food items that should be ideally sporadically consumed in a meal. This information is valuable in the context of calories estimation as it impacts glucose levels.</p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>We can observe that healthy people consuming high calorie food have moderate and normal glucose level. The moderated glucose level is also impacted by the Quality of food. They tend to have high quality of food intake.
 Whereas diabetic people have a comparatively high range of glucose level even though calorie intake is regulated. This can be due to low quality of food intake i.e unbalanced food. As in type1 diabetes the pancreas produces little or no insulin. Food intake causes sudden increase in glucose level and insulin injected takes time to show its effect. We can see the general trend of high glucose level.</p>
 <p>We see that patient number 9 tends to have less glucose levels compared to others. Poor quality of food can also be a factor for hypoglycemia. As dietician has annotated food images taking in account individual cases. Person 9 has all the meals in an unbalanced category with very less sugar intake.</p>

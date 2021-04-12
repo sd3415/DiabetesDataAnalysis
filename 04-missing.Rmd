@@ -4,3 +4,16 @@ The data set has missing values, because of the following cases during the data 
 
  - In some cases, people forgot to note down the measured glycemic values or they had problems with the BioHarness wearable device
  - Some people did not include pictures of all meals
+ 
+ 
+```{r}
+healthy_df <- read.csv('data/healthy_patients_glucose.csv', na.strings = "")
+colSums(is.na(healthy_df))
+
+dia_df <- read.csv('data/diabetes_patients_glucose.csv',na.strings = "")
+colSums(is.na(dia_df))
+
+sensor <- read.csv('data/diabetes_patient9_sensor_data.csv',na.strings = "")
+colSums(is.na(sensor))
+
+```
