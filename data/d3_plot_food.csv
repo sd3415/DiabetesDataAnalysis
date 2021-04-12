@@ -1,0 +1,346 @@
+"patient","datetime","description","calories","balance","quality"
+1,"2014-10-01 12:58","Tortelliniswith cheese,salad and Kagi chocolate",770,"Unbalance","Medium quality"
+1,"2014-10-01 15:30","Yogourt + chocolate bar",NA,NA,NA
+1,"2014-10-01 18:11","Champignon pizza, beet steamed, pear and grapes",926,"Unbalance","Good quality"
+1,"2014-10-01 22:00","Yogourt",NA,NA,NA
+1,"2014-10-02 07:33","Toast with mermelade,croissant with chocolate, coffee and orange juice and kiwi",689,"Balance","Medium quality"
+1,"2014-10-02 09:28","Coffee + chocolate bar",NA,NA,NA
+1,"2014-10-02 12:06","Pasta with meat loaf, endives, kiwi and plum",612,"Unbalance","Good quality"
+1,"2014-10-02 18:00","Beer tasting",NA,NA,NA
+1,"2014-10-02 20:03","Fondue,meat,Raw beef onions and cucumber, bread",1697,"Unbalance","Good quality"
+1,"2014-10-03 08:10","Nutella pie, orange juice, coffee and mandarine",874,"Unbalance","Medium quality"
+1,"2014-10-03 10:10","Coffee + candies",NA,NA,NA
+1,"2014-10-03 12:03","Duchess potaotes, ham,brocoli,coliflower and orange",364,"Balance","Good quality"
+1,"2014-10-03 16:00","Cake",NA,NA,NA
+1,"2014-10-03 18:20","Chicken breast, gnocchis, tomatoes and yogurt with cereal",717,"Unbalance","Good quality"
+1,"2014-10-04 07:57","Chocolate milk, coffee with milk and plum",534,"Unbalance","Medium quality"
+1,"2014-10-04 07:59","Chocolate milk, coffee with milk and plum",534,"Unbalance","Medium quality"
+1,"2014-10-04 12:03","Pizza with endives and banana",406,"Balance","Good quality"
+1,"2014-10-04 12:08","Pizza with endives and banana",406,"Balance","Good quality"
+1,"2014-10-04 12:08","Pizza with endives and banana",406,"Balance","Good quality"
+2,"2014-10-01 06:35","Shaker of proteins",NA,NA,NA
+2,"2014-10-01 08:32","Shaker of proteins post workout",NA,NA,NA
+2,"2014-10-01 10:00","Squares of chocolate",NA,NA,NA
+2,"2014-10-01 11:45","Hamburguer with frites, ketchup,mayonaise, lettuce and tomato, raspberry mousse with nuts",1578,"Unbalance","Medium quality"
+2,"2014-10-01 16:04","Barre de céréales",NA,NA,NA
+2,"2014-10-01 19:42","Quinoa with boiled pear ",334,"Unbalance","Good quality"
+2,"2014-10-01 21:30","Yogourt",NA,NA,NA
+2,"2014-10-02 06:36","Shaker of proteins",NA,NA,NA
+2,"2014-10-02 06:40","Orange juice, toast with butter and jam",478,"Unbalance","Medium quality"
+2,"2014-10-02 08:55","Ham sandwich",NA,NA,NA
+2,"2014-10-02 11:10","Square of chocolate",NA,NA,NA
+2,"2014-10-02 12:35","Beef with spatzli, can corn, black forest chocolate cake, flan and chantilly cream",1132,"Unbalance","Medium quality"
+2,"2014-10-02 16:00","Cereal bar",NA,NA,NA
+2,"2014-10-02 18:34","NO INFORMATION",0,"No information","No information"
+2,"2014-10-02 18:35","Marrons",990,"Unbalance","Good quality"
+2,"2014-10-03 06:34","Shaker of proteins",NA,NA,NA
+2,"2014-10-03 06:43","Orange juice, toast with butter and jam",707,"Unbalance","Medium quality"
+2,"2014-10-03 09:05","Bread slice",NA,NA,NA
+2,"2014-10-03 12:14","Fried rice, chinese chicken with carrots,onions and peppers",659,"Balance","Good quality"
+2,"2014-10-03 16:00","Cereal bar",NA,NA,NA
+2,"2014-10-03 19:35","Pasta with carbonara sauce and salmon",667,"Balance","Medium quality"
+2,"2014-10-03 20:00","Strawberry tartlet",NA,NA,NA
+2,"2014-10-04 06:34","Shaker of proteins",NA,NA,NA
+2,"2014-10-04 06:38","Orange juice, chocolate cereal and milk",370,"Unbalance","Medium quality"
+2,"2014-10-04 09:42","Shaker of proteins",NA,NA,NA
+2,"2014-10-04 11:35",NA,NA,NA,NA
+2,"2014-10-01 06:41","Orange juice, cereal with milk",490,"Unbalance","Medium quality"
+2,"2014-10-04 11:35",NA,NA,NA,NA
+2,"2014-10-04 16:00","Cereal bar",NA,NA,NA
+3,"2014-10-01 12:21","Soup with crackers",0,"No information","No information"
+3,"2014-10-01 19:00","snack",NA,NA,NA
+3,"2014-10-01 19:51","Eggs omelett with lettuce, tomato and cucumber salad",193,"Unbalance","Good quality"
+3,"2014-10-02 12:24","Lasagna",448,"Unbalance","Medium quality"
+3,"2014-10-02 12:24","Lasagna",448,"Unbalance","Medium quality"
+3,"2014-10-02 12:24","Lasagna",448,"Unbalance","Medium quality"
+3,"2014-10-02 20:22","Finger fish with lettuce, tomato and cucumber salad",261,"Unbalance","Medium quality"
+3,"2014-10-03 08:50","crackers ",107,"Unbalance","Low quality"
+3,"2014-10-03 20:04","Salmon with lettuce,tomato,cucumber salad and mandarins",568,"Unbalance","Good quality"
+3,"2014-10-04 09:03","Crackers with coffee",107,"Unbalance","Low quality"
+3,"2014-10-04 09:03","Crackers with coffee",107,"Unbalance","Low quality"
+4,"2014-10-01 06:22","Abricot juice and Bread",524,"Unbalance","Medium quality"
+4,"2014-10-01 06:25",NA,NA,NA,NA
+4,"2014-10-01 09:45","Orange",NA,NA,NA
+4,"2014-10-01 12:21","Pasta with mandarin",421,"Unbalance","Good quality"
+4,"2014-10-01 12:22","Pasta with mandarin",421,"Unbalance","Good quality"
+4,"2014-10-01 17:20","Orange",NA,NA,NA
+4,"2014-10-01 19:46","Delices ",357,"Balance","Medium quality"
+4,"2014-10-01 19:57","Strawberry cake",224,"Unbalance","Medium quality"
+4,"2014-10-02 06:18","Abricot juice and Bread with butter and jam ",481,"Unbalance","Medium quality"
+4,"2014-10-02 12:12","Carrots salad with delices",600,"Unbalance","Medium quality"
+4,"2014-10-02 12:12","Carrots salad with delices",600,"Unbalance","Medium quality"
+4,"2014-10-02 19:15",NA,NA,NA,NA
+4,"2014-10-02 19:33","pancakes",175,"Balance","Medium quality"
+4,"2014-10-03 06:27","Abricot juice and Bread with butter and jam ",481,"Unbalance","Medium quality"
+4,"2014-10-03 11:30","Balisto",NA,NA,NA
+4,"2014-10-03 12:32","Pasta with carbonara sauce, tomatoes and lettuce salad",653,"Balance","Good quality"
+4,"2014-10-03 19:46","Eggs with carrot and bread with philadelphia cheese",449,"Unbalance","Medium quality"
+4,"2014-10-03 20:15","Yogurt",NA,NA,NA
+4,"2014-10-04 06:25","Abricot juice with grapefruit and bread with butter and jam",453,"Unbalance","Medium quality"
+4,"2014-10-04 10:00","Mandarin + 1 balisto",NA,NA,NA
+4,"2014-10-04 12:00","Square of chocolate",NA,NA,NA
+4,"2014-10-04 12:42","Chinese rice",498,"Balance","Good quality"
+4,"2014-10-04 13:15","Eclair with coca cola",371,"Unbalance","Low quality"
+4,"2014-10-04 21:32","Marrons with gruyer cheese and grapes and dried meat",1437,"Unbalance","Good quality"
+4,"2014-10-04 23:30","Ice tea and candies",NA,NA,NA
+5,"2014-10-01 11:44","Fried chicken with baked potatoes,carrots and crougette,bread, chocolate cake,financercake,chantilly cream,almonds cake",2421,"Unbalance","Medium quality"
+5,"2014-10-01 21:14","Ham pizza",490,"Balance","Medium quality"
+5,"2014-10-02 08:25","Milk with cupcake,maria cookies,cornflakes",772,"Balance","Medium quality"
+5,"2014-10-02 11:38","Beef with sauce, duchesspotatoes, carrots and brocoli, with bread, roulade cake with marrons cream and vermicelles",1650,"Balance","Medium quality"
+5,"2014-10-02 14:12","Kägi Fret",NA,NA,NA
+5,"2014-10-02 18:55","Cereal bar",NA,NA,NA
+5,"2014-10-02 21:32","Potatoes eggs omelett",381,"Unbalance","Good quality"
+5,"2014-10-03 08:24","Milk with cupcake,maria cookies,cornflakes",772,"Balance","Low quality"
+5,"2014-10-03 11:42","Pork with rÃ¶sti,carrots and tomato with pesto, white bread and nougat cake",1323,"Unbalance","Medium quality"
+5,"2014-10-03 21:19","Cous cous with bacon",353,"Balance","Medium quality"
+5,"2014-10-04 08:25","Milk with cupcake,maria cookies,cornflakes",772,"Balance","Low quality"
+5,"2014-10-04 11:57","Meat balls with smash potaotes with sauce,carrots and peppers,white bread and roulade cake and chocolate mousse",1125,"Balance","Medium quality"
+5,"2014-10-04 16:35","Kägi Fret",NA,NA,NA
+5,"2014-10-04 20:56","Gnocchis with green pesto",595,"Unbalance","Medium quality"
+6,"2014-10-01 09:19","Strawberry cereal with milk and banana",363,"Unbalance","Medium quality"
+6,"2014-10-01 12:19","Pasta with tomatoes sauce and parmesan cheese, tomatoes with mozarella and olive oil and vinegar",1050,"Balance","Good quality"
+6,"2014-10-01 15:00","Coffee and cookie",NA,NA,NA
+6,"2014-10-01 20:42","Mini ham pizza",403,"Balance","Medium quality"
+6,"2014-10-02 07:05","Strawberry cereal and banana with milk and coffee",363,"Unbalance","Medium quality"
+6,"2014-10-02 09:30","Tea (1 sugar)",NA,NA,NA
+6,"2014-10-02 11:40","Pork with rÃ¶sti,carrots,green beans, tomatoes with pesto, white bread and cup of fruits",809,"Unbalance","Good quality"
+6,"2014-10-02 13:45","Tea (1 sugar)",NA,NA,NA
+6,"2014-10-02 18:50","Energy drink + sandwich",NA,NA,NA
+6,"2014-10-02 21:00","Beer",NA,NA,NA
+6,"2014-10-02 21:44","Pasta with parmesan cheese",432,"Balance","Good quality"
+6,"2014-10-03 08:06","Orange juice,chocolate cereal with milk and coffee",363,"Unbalance","Medium quality"
+6,"2014-10-03 11:57","Meat ball with smash potatoes with sauce and carrots, peas white bread and cup of fruits",938,"Unbalance","Good quality"
+6,"2014-10-03 13:32","Tea (1 sugar)",NA,NA,NA
+6,"2014-10-03 15:30","Tea",NA,NA,NA
+6,"2014-10-03 19:22","Spaguetti with meat and onions and mozzarella and tomatoes with oil and vinegar ",1250,"Unbalance","Good quality"
+6,"2014-10-04 08:08","Strawberry cereal and banana with milk ",363,"Unbalance","Medium quality"
+6,"2014-10-04 09:30","Energy drink",NA,NA,NA
+6,"2014-10-04 11:20","Tea",NA,NA,NA
+6,"2014-10-04 11:49","Fried chicken with carrots,green beans,brocoli,baked potatoes with parmesan cheese, dressing and bread, cup of fruits",1275,"Balance","Good quality"
+6,"2014-10-04 18:00","2 Beers",NA,NA,NA
+7,"2014-10-01 08:06","Chocolate milk, toast with butter and jam and blueberries",525,"Unbalance","Medium quality"
+7,"2014-10-01 12:09","Pasta with yellow pepper",565,"Balance","Good quality"
+7,"2014-10-01 13:15","Dried apricots",NA,NA,NA
+7,"2014-10-01 18:00","Chips",NA,NA,NA
+7,"2014-10-01 19:35","Meat with spatzli and green olives",805,"Unbalance","Good quality"
+7,"2014-10-01 19:47","Strawberry yogurt and grapes",240,"Unbalance","Medium quality"
+7,"2014-10-02 06:51","Milk with chocolate cereal",410,"Balance","Low quality"
+7,"2014-10-02 09:45","Grapes",NA,NA,NA
+7,"2014-10-02 13:09","Spatzli",300,"Unbalance","Medium quality"
+7,"2014-10-02 20:22","Mini ham pizza",403,"Balance","Medium quality"
+7,"2014-10-03 06:58","Milk, Bread with nutella",392,"Unbalance","Medium quality"
+7,"2014-10-03 12:10",NA,NA,NA,NA
+7,"2014-10-03 16:50","Dried apricots and coca cola",NA,NA,NA
+7,"2014-10-03 21:42","Rice with red pepper and courgette",265,"Unbalance","Good quality"
+7,"2014-10-04 08:51","Milk, grapefruit juice and bread with nutella",470,"Balance","Medium quality"
+7,"2014-10-04 13:00",NA,NA,NA,NA
+7,"2014-10-04 19:07","Chicken curry with rice and lettuce",581,"Balance","Good quality"
+7,"2014-10-04 19:32","Ice cream with cream",805,"Unbalance","Medium quality"
+7,"2014-10-05 10:34","Milk, grapefruit juice and bread with nutella and Le parfait cream",431,"Unbalance","Medium quality"
+7,"2014-10-05 12:52","Rice with red pepper and courgette",265,"Unbalance","Good quality"
+7,"2014-10-05 17:00","Dried apricots",NA,NA,NA
+7,"2014-10-05 18:48","Rice with red pepper and courgette and cheese delice",603,"Balance","Medium quality"
+8,"2014-10-01 12:27","Choucroute with sausage and pork",308,"Unbalance","Good quality"
+8,"2014-10-01 16:00","Small cake",NA,NA,NA
+8,"2014-10-01 18:39","Coffee yogurt, bread and gruyere cheese and dried meat",554,"Unbalance","Medium quality"
+8,"2014-10-02 08:00","Orange juice, chocolate and rice waffel",402,"Unbalance","Medium quality"
+8,"2014-10-02 10:10","Fruit juice",NA,NA,NA
+8,"2014-10-02 12:18","Cous cous with pork and green beans",529,"Unbalance","Good quality"
+8,"2014-10-02 16:30","Small cake",NA,NA,NA
+8,"2014-10-02 18:44","Green beans with cous cous",227,"Unbalance","Good quality"
+8,"2014-10-03 10:10","Fruit juice",NA,NA,NA
+8,"2014-10-03 12:19","White radish with chicken and rice",608,"Balance","Good quality"
+8,"2014-10-03 16:45","Small cake",NA,NA,NA
+8,"2014-10-03 21:19","Hamburguer with frites and nuggets and soda",1419,"Unbalance","Low quality"
+8,"2014-10-04 10:10","Fruit juice",NA,NA,NA
+8,"2014-10-04 10:10","Bread",NA,NA,NA
+8,"2014-10-04 12:27","Crepe",106,"No information","No information"
+8,"2014-10-04 18:09","Donner kebab",1000,"Unbalance","Medium quality"
+9,"2014-10-01 08:21","Ham sandwich and banana",360,"Unbalance","Good quality"
+9,"2014-10-01 11:42","Spinach and ricotta tortellinis with carbonara sauce, lettuce and tomato salad and dressing and bread",755,"Balance","Good quality"
+9,"2014-10-01 19:05","Soup with whole rye bread and olive oil",214,"Unbalance","Good quality"
+9,"2014-10-02 08:03","Ham sandwich and banana",360,"Unbalance","Good quality"
+9,"2014-10-02 11:42","Lasagna with lettuce and tomato salad and dressing",524,"Unbalance","Good quality"
+9,"2014-10-02 19:02","The chalet soup with whole rye bread",355,"Unbalance","Medium quality"
+9,"2014-10-03 08:19","Cramble eggs and ham with red peppers and bread with butter",677,"Unbalance","Good quality"
+9,"2014-10-03 11:55","Loempia with coca cola",202,"Unbalance","Low quality"
+9,"2014-10-03 19:41","Eggs with ham, olives, pepper and cottage cheese and coffee",640,"Unbalance","Good quality"
+9,"2014-10-04 06:37","Egg with ham, cottage cheese and rye bread",525,"Unbalance","Good quality"
+9,"2014-10-04 11:46","Fried chicken with tomato and egg salad, frites, lettuce and tomato salad with dressing, pear with chocolate, cake and vanilla cream",1365,"Unbalance","Medium quality"
+9,"2014-10-04 19:59","The chalet soup with whole rye bread",355,"Unbalance","Medium quality"
+9,"2014-10-11 12:15","Chinese Chicken with rice ",659,"Balance","Good quality"
+10,"2014-10-01 12:22","Pasta with bolognes sauce",514,"Unbalance","Good quality"
+10,"2014-10-01 22:52","Grapes and banana",246,"Unbalance","Good quality"
+10,"2014-10-02 09:42","Cereall with milk",270,"Balance","Medium quality"
+10,"2014-10-02 12:22","Rice with carrots and herbs",518,"Unbalance","Good quality"
+10,"2014-10-02 13:13","Panallet",75,"Unbalance","Medium quality"
+10,"2014-10-02 15:20","Cake",NA,NA,NA
+10,"2014-10-02 21:47","Pizza",1000,"Balance","Medium quality"
+10,"2014-10-03 08:22","Cereal with milk",250,"Unbalance","Medium quality"
+10,"2014-10-03 12:24","Potatoes with bacon",316,"Balance","Good quality"
+10,"2014-10-03 16:00","Kit-kat bar",NA,NA,NA
+10,"2014-10-03 20:56","Pizza",1000,"Balance","Medium quality"
+10,"2014-10-04 09:33","Cereal",182,"Unbalance","Low quality"
+10,"2014-10-04 12:16","Potatoes with bacon and cabbage",331,"Balance","Good quality"
+10,"2014-10-04 16:30","Chocolate bar",NA,NA,NA
+10,"2014-10-05 00:43","Cereal with milk",250,"Unbalance","Medium quality"
+11,"2014-10-01 12:17","Ham Sandwich",296,"Unbalance","Good quality"
+11,"2014-10-01 12:57","Panallet with coffee",75,"Unbalance","Medium quality"
+11,"2014-10-01 15:45","Coffee",NA,NA,NA
+11,"2014-10-01 19:45","Sausage with bread and smash potatoes and grapes",565,"Unbalance","Good quality"
+11,"2014-10-02 09:03","Coffee with milk bread",238,"Balance","Low quality"
+11,"2014-10-02 12:23","Sausage with pasta",442,"Unbalance","Good quality"
+11,"2014-10-02 13:05","Panallet with coffee",75,"Unbalance","Medium quality"
+11,"2014-10-02 19:08","Bread with fuet, camembert and manchego cheese",1307,"Unbalance","Medium quality"
+11,"2014-10-02 19:30","8 squares of chocolate",NA,NA,NA
+11,"2014-10-03 07:54","Coffee with milk bread",238,"Balance","Low quality"
+11,"2014-10-03 10:00","Coffee",NA,NA,NA
+11,"2014-10-03 12:21","Pasta with tomatoes sauce",475,"Unbalance","Medium quality"
+11,"2014-10-03 19:14","Tomatoes, corn and avocado salad",286,"Unbalance","Good quality"
+11,"2014-10-04 08:12","Coffee with milk bread",238,"Balance","Low quality"
+11,"2014-10-04 09:50","Coffee",NA,NA,NA
+11,"2014-10-04 12:18","Green beans with bacon and chocolate yogurt",817,"Unbalance","Medium quality"
+11,"2014-10-04 15:00","Coffee",NA,NA,NA
+11,"2014-10-04 19:09","Tortillas with camembert, machego cheese and cana de lomo ",1391,"Unbalance","Medium quality"
+12,"2014-10-01 12:11","Ricotta and spinach tortellinis and chocolate branche",681,"Balance","Low quality"
+12,"2014-10-01 12:31","Quiche Lorraine",267,"Unbalance","Medium quality"
+12,"2014-10-01 19:11","Bread with ham and cheese and tomatoes with olive oil",1368,"Balance","Good quality"
+12,"2014-10-02 09:28","Croissant with comercial juice ",240,"Unbalance","Low quality"
+12,"2014-10-02 09:29","Croissant with comercial juice ",240,"Unbalance","Low quality"
+12,"2014-10-02 12:15",NA,NA,NA,NA
+12,"2014-10-02 13:00","Glass of orange juice",NA,NA,NA
+12,"2014-10-02 18:00","Chocolate bar",NA,NA,NA
+12,"2014-10-02 20:00",NA,NA,NA,NA
+12,"2014-10-03 11:30","Chocolate bar",NA,NA,NA
+12,"2014-10-03 12:30",NA,NA,NA,NA
+12,"2014-10-03 17:00","Apéro",NA,NA,NA
+12,"2014-10-04 12:13","Fried chicken with gratin potatoe with cream, carrots,green beans and peas steamed, vanilla dessert and bread",1504,"Unbalance","Good quality"
+12,"2014-10-04 18:40",NA,NA,NA,NA
+13,"2014-10-01 12:20","Pasta with bolognes sauce",355,"Balance","Good quality"
+13,"2014-10-01 18:54","Breakfast cereal with milk,green juice, toast with nutella and honey and strawberry yogurt",1048,"Balance","Medium quality"
+13,"2014-10-02 12:15","Pasta with tomatoes sauce",512,"Unbalance","Good quality"
+13,"2014-10-02 18:47","Chocolate Cereal with milk, bread with nutella and jam, cranberries flan and milk",1279,"Balance","Medium quality"
+13,"2014-10-03 08:26","Bread and tea",274,"Balance","Medium quality"
+13,"2014-10-03 12:34","Rice with meatballs",546,"Unbalance","Medium quality"
+13,"2014-10-03 15:45","KitKat",NA,NA,NA
+13,"2014-10-03 19:50","Miso soup, seaweed,croutons,lettuce and bread,tea",803,"Unbalance","Good quality"
+13,"2014-10-04 08:25","Energy milk and bread",428,"Unbalance","Low quality"
+13,"2014-10-04 12:27","Noodles",681,"Unbalance","Low quality"
+13,"2014-10-04 19:01","Mini pizzas and lettuce with croutons",1229,"Balance","Medium quality"
+14,"2014-10-01 12:20","Chicken with peppers, onions and potatoes",400,"Unbalance","Good quality"
+14,"2014-10-01 14:50","Apple",NA,NA,NA
+14,"2014-10-01 18:45","Slide ham",NA,NA,NA
+14,"2014-10-01 19:39","Salami pizza ",999,"Unbalance","Medium quality"
+14,"2014-10-01 21:14","Limoncello",NA,NA,NA
+14,"2014-10-01 22:40","Chocolate & Milk",NA,NA,NA
+14,"2014-10-02 08:13","Chocolate milk with maria cookies",264,"Unbalance","Medium quality"
+14,"2014-10-02 11:00","Apple",NA,NA,NA
+14,"2014-10-02 12:20","Chicken with potatoes, onions and peppers",404,"Unbalance","Good quality"
+14,"2014-10-02 18:26","Salami pizza, toast with smoke salmon, grapes and mango yogurt",899,"Balance","Medium quality"
+14,"2014-10-02 18:42","Mango yogurt and grapes",212,"Balance","Medium quality"
+14,"2014-10-02 21:30","Yogurt",NA,NA,NA
+14,"2014-10-02 21:35","Yogurt + Chorizo",NA,NA,NA
+14,"2014-10-02 22:45","Glass of milk",NA,NA,NA
+14,"2014-10-03 08:39","Chocolate milk with maria cookies",264,"Unbalance","Medium quality"
+14,"2014-10-03 12:35","Salmon with courgettes and banana",729,"Unbalance","Good quality"
+14,"2014-10-03 15:45","Kitkat + 2 mandarins",NA,NA,NA
+14,"2014-10-03 15:56","Mandarin with kit kat matcha",113,"Unbalance","Medium quality"
+14,"2014-10-03 19:15","Salmon and surimi with lettuce, tomatoes and carrot",175,"Unbalance","Good quality"
+14,"2014-10-03 21:31","Strawberries yogurt and toast with chorizo",382,"Unbalance","Medium quality"
+14,"2014-10-03 22:45","Glass of milk",NA,NA,NA
+14,"2014-10-04 08:19","Chocolate milk with maria cookies",251,"Unbalance","Medium quality"
+14,"2014-10-04 12:27","Beans, eggs and chorizo soup with carrots and banana",933,"Unbalance","Good quality"
+14,"2014-10-04 12:28","Bean, eggs and chorizo soup with carrots and banana",933,"Unbalance","Good quality"
+14,"2014-10-04 19:47","Salmon and surimi with lettuce, tomatoes and carrot",175,"Unbalance","Good quality"
+14,"2014-10-04 22:45","Glass of milk",NA,NA,NA
+15,"2014-10-01 12:16","Greek salad, apple and chocolate cookie",677,"Unbalance","Good quality"
+15,"2014-10-01 12:30","Small cookie",NA,NA,NA
+15,"2014-10-01 12:59","Coconut panallet with coffee",75,"Unbalance","Medium quality"
+15,"2014-10-01 18:00","5 chestnuts",NA,NA,NA
+15,"2014-10-01 18:30","Pork with Courgette with ricotta cheese, carrot, brocoli and tomato",670,"Unbalance","Good quality"
+15,"2014-10-01 22:38","Strawberries with oat, nuts and asiago cheese",694,"Unbalance","Good quality"
+15,"2014-10-02 09:40","Banana",NA,NA,NA
+15,"2014-10-02 10:30","5 Nuts",NA,NA,NA
+15,"2014-10-02 12:22","Watercress, dried tomatoes, nuts and goat cheese salad, apple.",1031,"Unbalance","Good quality"
+15,"2014-10-02 19:57","Sausage with egg plant, pepper with olive oil and sweet peach",630,"Unbalance","Medium quality"
+15,"2014-10-02 22:23","Natural yogurt with sugar, oat, nuts and asiago cheese",1172,"Unbalance","Good quality"
+15,"2014-10-03 11:40","Banana",NA,NA,NA
+15,"2014-10-03 12:22","Lettuce, tomato,semi-hard goat cheese,mandarin and orange",536,"Unbalance","Good quality"
+15,"2014-10-03 15:38","Mandarin",NA,NA,NA
+15,"2014-10-03 17:51","Brocoli soup,egg plant, pepper, chicken breast with pesto and dark chocolate",750,"Unbalance","Good quality"
+15,"2014-10-03 22:30","Blueberries yogurt, oat and nuts with asigao cheese",1139,"Unbalance","Good quality"
+15,"2014-10-04 13:08","Watercress, dried tomatoes, nuts and goat cheese salad with olive oil",1012,"Unbalance","Good quality"
+15,"2014-10-04 16:05","Apple",NA,NA,NA
+15,"2014-10-04 17:40","Carrot soup, hamburguer with brocoli, crougette and tomato",402,"Unbalance","Good quality"
+16,"2014-10-01 08:32","Coffee madeleine,cake and cookies",316,"Unbalance","Low quality"
+16,"2014-10-01 10:54","Coffee with sugar ",40,"Unbalance","Low quality"
+16,"2014-10-01 12:27","Rice with cheese,red cabbage, bread and apple",426,"Balance","Good quality"
+16,"2014-10-01 12:27","Rice with cheese,red cabbage, bread and apple",426,"Balance","Good quality"
+16,"2014-10-01 13:06","Coffee with sugar ",40,"Unbalance","Low quality"
+16,"2014-10-01 19:06","Sausages with mashed potatoes,tomatoes with avocado and olives,kaki and cookie",951,"Unbalance","Good quality"
+16,"2014-10-02 08:31","Coffe with cookies and madeleines ",363,"Unbalance","Low quality"
+16,"2014-10-02 12:25","Tuna with cucumber and tomatoes,spaetzle and toast with philadelphia cheese ",446,"8 Balance","Good quality"
+16,"2014-10-02 17:50","Coffee",0,"Balance","Low quality"
+16,"2014-10-02 19:39","Chicken with wheat, green beans and carrots, apple and cookie",898,"Balance","Good quality"
+16,"2014-10-03 08:29","Cake,sandwich cookie, butter cookie",221,"Unbalance","Low quality"
+16,"2014-10-03 08:29","Cake,sandwich cookie, butter cookie",221,"Unbalance","Low quality"
+16,"2014-10-03 12:35","Wheat with green beans carrots and cheese, apple.",894,"Balance","Good quality"
+16,"2014-10-03 12:35","Wheat with green beans carrots and cheese, apple.",894,"Balance","Good quality"
+16,"2014-10-03 13:06","chocolate coverage cookie with coffee",32,"Unbalance","Low quality"
+16,"2014-10-03 19:22","Beans and rice with bread, pear and cookie",729,"Unbalance","Good quality"
+16,"2014-10-04 08:45","Butter cookie, madeleine and oreo cookie with coffee",214,"Unbalance","Low quality"
+16,"2014-10-04 12:41","Rice with beans, fennel with hummus and apple",624,"Unbalance","Good quality"
+16,"2014-10-04 13:39","Coffe with butter cookie",32,"Unbalance","Low quality"
+16,"2014-10-04 17:49","Chocolate cake ",738,"Unbalance","Low quality"
+16,"2014-10-04 17:50","Milk, butter cookie and coffee with sugar and cream coffee",185,"Unbalance","Low quality"
+16,"2014-10-04 19:42","Smoke salmon, cottage cheese, avocado with olives,fennel, tomatoes, hummus,bread and orange",522,"Unbalance","Good quality"
+16,"2014-10-04 19:43","Smoke salmon, cottage cheese, avocado with olives,fennel, tomatoes, hummus,bread and orange",522,"Unbalance","Good quality"
+17,"2014-10-01 08:07","Madeleine with chocolate, kinder pingui and coffee",397,"Unbalance","Low quality"
+17,"2014-10-01 12:14","Champignon,tomatoes, salami and mozzarella cheese, bread and banana",7715,"Unbalance","Good quality"
+17,"2014-10-01 12:14","Champignon,tomatoes, salami and mozzarella cheese, bread and banana",715,"Unbalance","Good quality"
+17,"2014-10-01 18:59","Sausage, Vegetarian Hamburguer,Raviolis,frites potatoes,Goat semi-hard cheese,and avocado, artichokes, red pepper salad, White bread and orange",1338,"Unbalance","Medium quality"
+17,"2014-10-02 07:39","Madeleine with chocolate, kinder pingui and coffee",516,"Unbalance","Low quality"
+17,"2014-10-02 12:22","Hamburguer and ham sandwich ",1568,"Unbalance","Good quality"
+17,"2014-10-02 20:10","Fried chicken with chickpeas, tomatoes,goat semi-hard cheese, letter soup and orange ",1013,"Unbalance","Good quality"
+17,"2014-10-03 06:59","Madeleine with chocolate, waffle biscuits and coffee",557,"Unbalance","Low quality"
+17,"2014-10-03 12:12","Pasta with tuna, artichoke and brie cheese",633,"Unbalance","Good quality"
+17,"2014-10-03 19:39","Flat bread with ham and goat semi-hard cheese, potatoes and red peppers",386,"Balance","Good quality"
+17,"2014-10-04 08:16","Madeleine and vanilla cookies and coffee",405,"Unbalance","Low quality"
+17,"2014-10-04 12:21","Greek salad with salami and crackers",813,"Unbalance","Medium quality"
+17,"2014-10-04 18:51","Peas soup, fried chicken,potatoes with red pepperswith oil and crackers",661,"Unbalance","Good quality"
+17,"2014-10-04 18:52","Peas soup, fried chicken,potatoes with red pepperswith oil and crackers",661,"Unbalance","Good quality"
+18,"2014-10-01 07:54","Bread with butter and jam, tea and mandarin",400,"Unbalance","Medium quality"
+18,"2014-10-01 09:00","Coffee + 1 sugar",NA,NA,NA
+18,"2014-10-01 12:37","Lasagna with spinach and beet",535,"Unbalance","Good quality"
+18,"2014-10-01 13:00","Coffee + 1 sugar",NA,NA,NA
+18,"2014-10-01 19:16","Salty snacks, mixed chocolate and mix cookies and coffee",1517,"Unbalance","Low quality"
+18,"2014-10-01 20:38","Smoke salmon with whole grain bread with butter and tea",490,"Unbalance","Good quality"
+18,"2014-10-01 22:00","50gr of chocolate",NA,NA,NA
+18,"2014-10-02 06:46","Bread with butter and Milk",509,"Unbalance","Good quality"
+18,"2014-10-02 08:15","Coffee + 1 sugar",NA,NA,NA
+18,"2014-10-02 13:00","Coffee + 1 sugar",NA,NA,NA
+18,"2014-10-02 19:03","Champignon pizza",5001,"Unbalance","Good quality"
+18,"2014-10-03 09:33","Whole grain bread with butter and jam, coffee",481,"Unbalance","Good quality"
+18,"2014-10-03 14:55","Coffee + 1 sugar + chocolate",NA,NA,NA
+18,"2014-10-03 18:16","Spaguetti with fried chicken and brocoli",656,"Unbalance","Good quality"
+18,"2014-10-04 13:05","Lettuce,corn,tomatoes,radish and carrots salad with olive oil",364,"Unbalance","Good quality"
+18,"2014-10-04 13:37","Pasta with carbonara sauce",856,"Unbalance","Good quality"
+18,"2014-10-04 21:39","Chinese soup",181,"Unbalance","Good quality"
+19,"2014-10-01 11:40","Sausage with roesti, brocoli,carrots,spinach and green peas and bread, chocolate cake and waffle with chocolate cream",1665,"Unbalance","Medium quality"
+19,"2014-10-01 15:37","Small cake 74g",NA,NA,NA
+19,"2014-10-01 18:39","Shake of protein 30g",NA,NA,NA
+19,"2014-10-01 18:40","Whey protein shake",110,"Unbalance","Good quality"
+19,"2014-10-01 19:28","Yogurt with creme",NA,NA,NA
+19,"2014-10-01 20:37","Rice butter and ketchup with salmon",596,"Balance","Good quality"
+19,"2014-10-02 07:22","Small cake 74g",NA,NA,NA
+19,"2014-10-02 11:42","Lasagna with bread and berliner ball",1150,"Balance","Medium quality"
+19,"2014-10-02 16:35","Small cake 74g",NA,NA,NA
+19,"2014-10-02 21:13","Lasagna",448,"Unbalance","Medium quality"
+19,"2014-10-03 11:42","Fried chicken with carrots and coliflower with dressing and bread, tiramisu and vanilla cream",1430,"Unbalance","Medium quality"
+19,"2014-10-03 18:48","Shake of protein 30g",NA,NA,NA
+19,"2014-10-03 19:20","Piece of cheese",NA,NA,NA
+19,"2014-10-03 20:54","Pasta with whole cream",644,"Balance","Medium quality"
+19,"2014-10-04 07:00","Small cake 74g",NA,NA,NA
+19,"2014-10-04 15:49","Small cake 74g",NA,NA,NA
+19,"2014-10-04 18:55","Shake of protein 30g",NA,NA,NA
+19,"2014-10-04 20:34","Fish finger with rice,green peas, carrots,can corn, butter and ketchup",1525,"Balance","Medium quality"

@@ -215,5 +215,35 @@ food_glu_final_df$food_quality[is.na(food_glu_final_df$food_quality)] <- 0.5
 food_glu_final_df <-food_glu_final_df[food_glu_final_df$person != 12, ]
 write.csv(food_glu_final_df, "./data/individuals_glucose_food_intake.csv", row.names = FALSE)
 
+## getting data for D3 interactive plot:
 
+# food information for healthy group:
+# excluding patient number 12 data as he is a diabetes patient
+file_locations <- c(paste(folder_location,"/healthy_subset/","00",2:9,sep=""),
+                    paste(folder_location,"/healthy_subset/","0",10:11,sep=""),
+                    paste(folder_location,"/healthy_subset/","0",13:20,sep=""))
+patient_count <- 1
+healthy_df2 <- read.csv(paste(folder_location,"/healthy_subset/001/food.csv",sep=""), na.strings="")
+healthy_df2 <- healthy_df2[c(1,2,4,5,6,7)]
+healthy_df2$patient <- patient_count
+for (file_path in file_locations) {
+  patient_count <- patient_count + 1
+  temp_df <- read.csv(paste(file_path,"food.csv",sep="/"), na.strings="")
+  temp_df <- temp_df[c(1,2,4,5,6,7)]
+  temp_df$patient <- patient_count
+  healthy_df2 <- rbind(healthy_df2, temp_df)
+}
+
+healthy_df2$datetime = paste(healthy_df2$date, healthy_df2$time)
+healthy_df2 <- healthy_df2[c("patient","datetime","description","calories","balance","quality")]
+healthy_df2$calories <- as.numeric(healthy_df2$calories)
+
+healthy_glucose <- read.csv('./data/healthy_patients_glucose.csv', na.strings = "")
+healthy_glucose$datetime = paste(healthy_glucose$date, healthy_glucose$time)
+healthy_glucose$glucose <- as.numeric(healthy_glucose$glucose)
+healthy_glucose <- healthy_glucose[c("patient","datetime","glucose")]
+healthy_glucose <- na.omit(healthy_glucose)
+
+write.csv(healthy_glucose, "./data/d3_plot_glucose.csv", row.names = FALSE)
+write.csv(healthy_df2, "./data/d3_plot_food.csv", row.names = FALSE)
 
