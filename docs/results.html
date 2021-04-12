@@ -76,8 +76,9 @@
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#trends-in-glucose-levels"><i class="fa fa-check"></i><b>5.1</b> Trends in glucose levels</a></li>
-<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#does-changes-in-glucose-level-correlate-with-changes-in-ecg-signals"><i class="fa fa-check"></i><b>5.2</b> Does changes in glucose level correlate with changes in ECG signals?</a></li>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#understanding-the-sample-considered-for-this-study"><i class="fa fa-check"></i><b>5.1</b> Understanding the sample considered for this study</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#trends-in-glucose-levels"><i class="fa fa-check"></i><b>5.2</b> Trends in glucose levels</a></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#does-changes-in-glucose-level-correlate-with-changes-in-ecg-signals"><i class="fa fa-check"></i><b>5.3</b> Does changes in glucose level correlate with changes in ECG signals?</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
@@ -102,8 +103,12 @@
             <section class="normal" id="section-">
 <div id="results" class="section level1" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Results</h1>
-<div id="trends-in-glucose-levels" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Trends in glucose levels</h2>
+<div id="understanding-the-sample-considered-for-this-study" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Understanding the sample considered for this study</h2>
+<p>In this data set, clinical data such as age, gender, height and weight are not referenced with corresponding person’s other data in this data set. so here we are just looking at the overall characteristics of the people considered in this study, just to get an understanding of biases if any in selecting the sample for the data acquisition.</p>
+</div>
+<div id="trends-in-glucose-levels" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Trends in glucose levels</h2>
 <p>To understand how the glucose measurement values vary before and after each meal, we can look at the boxplot of glucose levels grouped by different categories, in this data set there is a indicator for whether the measurement value is before or after the meal, for the healthy group data set.</p>
 <p><img src="finalproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>We can see that on an average glucose levels tend to be higher in the measurements which are taken 2 hours after each meal, compared to the corresponding values before eating.</p>
@@ -112,8 +117,8 @@
 <p>Looking at these distributions of glucose levels for healthy group and diabetes patients, it is usual that glucose levels for people with diabetes tend to be higher than healthy group, due to the fact that in case of type 1 diabetes, pancreas produce little or no insulin and as a result glucose builds up in the bloodstream as there is scarcity of insulin to let glucose into the cells.</p>
 <p>We see that patient number 9 tend to have less glucose levels compared to others, so we can infer that patient 9 is more prone to have glucose levels that can trigger hypoglycemia (blood sugar levels drop) events causing danger, as 3.9 mmol/l is the commonly used lower threshold for normal glucose.</p>
 </div>
-<div id="does-changes-in-glucose-level-correlate-with-changes-in-ecg-signals" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Does changes in glucose level correlate with changes in ECG signals?</h2>
+<div id="does-changes-in-glucose-level-correlate-with-changes-in-ecg-signals" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Does changes in glucose level correlate with changes in ECG signals?</h2>
 <p>Now let us look at glucose level variation with time for patient 9 on a specific day and then compare with other sensor data available, in order to detect patterns or correlations.</p>
 <p><img src="finalproj_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>We see hypoglycemic events from the above figure i.e when glucose level is less than 3.9 mmol/l. To clearly understand correlations for changes in values, let us look at relative value plots of glucose levels and other measurements collectively.</p>

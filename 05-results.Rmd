@@ -1,5 +1,11 @@
 # Results
 
+## Understanding the sample considered for this study
+
+In this data set, clinical data such as age, gender, height and weight are not referenced with corresponding person's other data in this data set. so here we are just looking at the overall characteristics of the people considered in this study, just to get an understanding of biases if any in selecting the sample for the data acquisition.
+
+
+
 ## Trends in glucose levels
 
 To understand how the glucose measurement values vary before and after each meal, we can look at the boxplot of glucose levels grouped by different categories, in this data set there is a indicator for whether the measurement value is before or after the meal, for the healthy group data set.
