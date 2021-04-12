@@ -24,6 +24,7 @@ for (file_path in file_locations) {
 
 write.csv(healthy_df, "./data/healthy_patients_glucose.csv", row.names = FALSE)
 
+
 # glucose measurements data for diabetes patients:
 file_locations <- paste(folder_location,"/diabetes_subset/","00",2:9,sep="")
 patient_count <- 1
@@ -39,3 +40,19 @@ for (file_path in file_locations) {
 }
 
 write.csv(diabetes_df, "./data/diabetes_patients_glucose.csv", row.names = FALSE)
+
+
+# reading other sensors data for diabetes patient 9 for use in this analysis
+library(tidyverse)
+library(lubridate)
+p9_sensor_data <- read.csv(paste(folder_location,
+                               "/diabetes_subset/009/sensor_data/2014_10_03-08_21_59/2014_10_03-08_21_59_Summary.csv",sep=""))
+df <- p9_sensor_data[c("Time", "HR", "BR", "Activity", "ECGAmplitude")]
+df <- df %>%
+  mutate(Time = substr(Time, 1, 16))
+df <- df %>%
+  group_by(Time) %>%
+  summarise(HR = max(HR), BR = max(BR),
+            Activity = max(Activity), ECGAmplitude = max(ECGAmplitude))
+
+write.csv(df, "./data/diabetes_patient9_sensor_data.csv", row.names = FALSE)

@@ -47,6 +47,7 @@ ggplot(diabetes_df, aes(x = patient, y = glucose)) +
   xlab("patient") +
   ylab("glucose level [mmol/l]") +
   ggtitle("Glucose measurements for each diabetes patient") +
+  coord_flip() +
   theme_grey(13) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
@@ -63,14 +64,15 @@ Now let us look at glucose level variation with time for patient 9 on a specific
 library(lubridate)
 
 p9 <- diabetes_df %>% filter(patient == 9)
+p9 <- p9 %>%
+  mutate(time = substr(time, 1, 5))
 p9$datetime = paste(p9$date, p9$time)
 # retaining only the data where we have continuous measurements to detect patterns
 p9_2 <- p9 %>% filter(date == '2014-10-03')
 # excluding manual measurements
 p9_2 <- p9_2 %>% filter(type != 'manual')
 p9_2 <- p9_2 %>%
-  mutate(datetime = ymd_hms(datetime),
-         date = format(datetime, "%b %d")) 
+  mutate(datetime = ymd_hm(datetime)) 
 # time series plot with horizontal line indicating hypoglycemia threshold
 g <- ggplot(p9_2, aes(datetime, glucose)) + geom_point()
 g + geom_line(color = "grey50") +
@@ -81,4 +83,67 @@ g + geom_line(color = "grey50") +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-We see hypoglycemic events from the above figure i.e when glucose level is less than 3.9 mmol/l
+We see hypoglycemic events from the above figure i.e when glucose level is less than 3.9 mmol/l. To clearly understand correlations for changes in values, let us look at relative value plots of glucose levels and other measurements collectively.
+
+```{r}
+library(reshape2)
+
+p9_data <- read.csv('data/diabetes_patient9_sensor_data.csv', na.strings = "")
+p9_data <- p9_data %>%
+  mutate(Time = dmy_hm(Time))
+
+# combining glucose levels data with other sensor data:
+p9_2$ECG <- NA
+p9_2$Activity <- NA
+p9_2$HR <- NA
+p9_2$BR <- NA
+max_time <- p9_2[nrow(p9_2),"datetime"]
+p9_data <- p9_data %>% filter(Time <= max_time)
+for (r in 2:nrow(p9_2)) {
+  curr_time = p9_2[r,"datetime"]
+  previous_time = p9_2[r-1,"datetime"]
+  temp_df <- p9_data %>% filter(Time <= curr_time)
+  temp_df <- temp_df %>% filter(Time > previous_time)
+  p9_2$ECG[r] <- max(temp_df["ECGAmplitude"])
+  p9_2$Activity[r] <- max(temp_df["Activity"])
+  p9_2$HR[r] <- max(temp_df["HR"])
+  p9_2$BR[r] <- max(temp_df["BR"])
+}
+
+p9_2_sub <- p9_2[c("datetime", "glucose", "ECG", "Activity", "HR", "BR")]
+df <- na.omit(p9_2_sub)
+df["Glucose Level"] <- NA
+df["ECG Amplitude"] <- NA
+df["Activity Level"] <- NA
+df["Heart Rate"] <- NA
+df["Breathing Rate"] <- NA
+for (r in 2:nrow(df)) {
+  df[r,"Glucose Level"] <- min(100*(df[r,"glucose"]-df[r-1,"glucose"])/df[r-1,"glucose"], 100)
+  df[r,"ECG Amplitude"] <- min(100*(df[r,"ECG"]-df[r-1,"ECG"])/df[r-1,"ECG"], 100)
+  df[r,"Activity Level"] <- min(100*(df[r,"Activity"]-df[r-1,"Activity"])/df[r-1,"Activity"], 100)
+  df[r,"Heart Rate"] <- min(100*(df[r,"HR"]-df[r-1,"HR"])/df[r-1,"HR"], 100)
+  df[r,"Breathing Rate"] <- min(100*(df[r,"BR"]-df[r-1,"BR"])/df[r-1,"BR"], 100)
+}
+df <- na.omit(df)
+df <- df[c("datetime","Glucose Level","ECG Amplitude","Activity Level","Heart Rate","Breathing Rate")]
+df_2 <- melt(df, id.vars = 'datetime')
+ggplot(df_2, aes(datetime, y = value, 
+               color = fct_reorder2(variable, datetime, value))) +
+  geom_line() + xlab("time") + ylab("relative percent change") +
+  theme(legend.title = element_blank())
+```
+
+Looking at the overall plot, we see that changes in glucose level doesn't correlate well with changes in other measurements here. Now let us at only glucose level and ECG signal data variation with time.
+
+```{r}
+p9_2_sub <- p9_2[c("datetime", "glucose", "ECG")]
+p9_2_sub <- melt(p9_2_sub, id.vars = 'datetime')
+ggplot(p9_2_sub, aes(x = datetime, y = value)) +
+  geom_point() +
+  geom_line(color = "grey50") +
+  facet_wrap(~ variable, scales = 'free_y', ncol = 1)
+```
+
+We do see that, when hypoglycemia events occurred, there seems to be sudden fluctuations in the ECG signal. This needs to be explored further considering new data collection in the future, as present data set has less number of hypoglycemic events for the diabetes patients.
+
+

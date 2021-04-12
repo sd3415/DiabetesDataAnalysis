@@ -7,3 +7,5 @@ They acquired 20 healthy subjects and 9 patients with type-1 diabetes. The acqui
 Even though the data consists of only 9 patients, it has considerable number of hours of recordings which can be helpful for analysis. 8414 measurements of glycemic levels have been made for people with Type 1 Diabetes for more than 1500 hours.
 
 For data acquisition, the protocol is almost identical for both diabetes patients and healthy people groups. They were asked to wear the BioHarness sensor during the 4 days when these measurements are taken and are also instructed to take pictures of their meals. The only difference between the study groups is, healthy people group protocol instructed six glucose measures per day, one before each meal of breakfast, lunch and dinner and one measurement after 2 hours of every meal. For diabetes patients, glucose levels have been obtained from Continuous Glucose Monitoring (CGM) device which samples glucose measurement every 5 minutes.
+
+For descriptions of sensor data logged by Zephyr BioHarness 3 device, please refer to https://www.zephyranywhere.com/media/download/bioharness-log-data-descriptions-07-apr-2016.pdf
