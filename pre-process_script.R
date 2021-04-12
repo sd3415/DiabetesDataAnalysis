@@ -56,3 +56,154 @@ df <- df %>%
             Activity = max(Activity), ECGAmplitude = max(ECGAmplitude))
 
 write.csv(df, "./data/diabetes_patient9_sensor_data.csv", row.names = FALSE)
+
+#reading data pertaining to diet 
+
+datalist = list()
+for(i in 1:9) {
+  path <- paste0(folder_location,"/diabetes_subset/00",i, "/food.csv")
+  
+  food_data<-data.frame(read.csv(path,header=T,sep=','))
+  balance_food<-factor(food_data$balance,c('Unbalance','Balance'),labels=c('Unbalance','Balance'))
+  food_table<-table(balance_food)
+  food_table <- addmargins(food_table) 
+  df <- as.data.frame(food_table) 
+  df$Freq <- df$Freq/df[3,2]
+  df <- df[-nrow(df),]
+  labels <- 'Diabetes'
+  df <- cbind(df, Person = labels)
+  df$i <- i  
+  datalist[[i]] <- df
+}
+
+final_data_dia= do.call(rbind, datalist)
+
+datalist_healthy = list()
+for(i in 1:20) {
+  if (i<10) {
+    path <- paste0(folder_location,"/healthy_subset/00",i, "/food.csv")
+  }
+  else {
+    path <- paste0(folder_location,"/healthy_subset/0",i, "/food.csv")
+  }
+  
+  food_data<-data.frame(read.csv(path,header=T,sep=','))
+  balance_food<-factor(food_data$balance,c('Unbalance','Balance'),labels=c('Unbalance','Balance'))
+  food_table<-table(balance_food)
+  food_table <- addmargins(food_table) 
+  df <- as.data.frame(food_table) 
+  df$Freq <- df$Freq/df[3,2]
+  df <- df[-nrow(df),]
+  labels <- 'Healthy'
+  df <- cbind(df, Person = labels)
+  df$i <- i  
+  datalist_healthy[[i]] <- df
+}
+
+final_data_healthy= do.call(rbind, datalist_healthy)
+
+df_new_healthy <- as.data.frame(aggregate(final_data_healthy$Freq, by=list(Category=final_data_healthy$balance_food), FUN=sum))
+labels <- 'Healthy'
+df_new_healthy <- cbind(df_new_healthy, Person = labels)
+df_new_healthy$x<- (df_new_healthy$x/20)*100
+
+df_new_dia = as.data.frame(aggregate(final_data_dia$Freq, by=list(Category=final_data_dia$balance_food), FUN=sum))
+labels <- 'Diabetes'
+df_new_dia <- cbind(df_new_dia, Person = labels)
+df_new_dia$x<- (df_new_dia$x/9)*100
+
+
+food_final_df <- rbind(df_new_dia,df_new_healthy)
+names(food_final_df)[2] <- "Freq"
+food_final_df <- rapply(food_final_df, as.character, classes="factor", how="replace")
+write.csv(food_final_df, "./data/individuals_food_balanced_unbalanced.csv", row.names = FALSE)
+
+# reading data regarding glucose level and calorie intake 
+
+datalist = list()
+for(i in 1:9) {
+  path <- paste0(folder_location,"/diabetes_subset/00",i, "/food.csv")
+  food_data<-data.frame(read.csv(path,header=T,sep=','))
+  food_data <-  food_data[!is.na(food_data$calories), ]
+  cal <- c(mean(food_data$calories))
+  person <- c(i)
+  df <- data.frame(person,cal)
+  df$i <- i  
+  datalist[[i]] <- df
+}
+
+final_data_dia_cal= do.call(rbind, datalist)
+
+datalist = list()
+for(i in 1:9) {
+  path <- paste0(folder_location,"/diabetes_subset/00",i, "/glucose.csv")
+  food_data<-data.frame(read.csv(path,header=T,sep=','))
+  food_data <-  food_data[!is.na(food_data$glucose), ]
+  cal <- c(mean(food_data$glucose))
+  person <- c(i)
+  df <- data.frame(person,cal)
+  df$i <- i  
+  datalist[[i]] <- df
+}
+
+final_data_dia_glu= do.call(rbind, datalist)
+final_data_glu_cal_dia = merge(x = final_data_dia_glu, y = final_data_dia_cal, by = "person")
+keeps <- c("person", "cal.x", "cal.y")
+final_data_glu_cal_dia = final_data_glu_cal_dia[keeps]
+names(final_data_glu_cal_dia)[2] <- "glucose"
+names(final_data_glu_cal_dia)[3] <- "calories"
+labels <- 'Diabetes'
+final_data_glu_cal_dia <- cbind(final_data_glu_cal_dia, Person = labels)
+
+#Healthy
+
+datalist = list()
+for(i in 1:20) {
+  if (i<10) {
+    path <- paste0(folder_location,"/healthy_subset/00",i, "/food.csv")
+  }
+  else {
+    path <- paste0(folder_location,"/healthy_subset/0",i, "/food.csv")
+  }
+  food_data<-data.frame(read.csv(path,header=T,sep=','))
+  food_data$calories <- as.numeric(food_data$calories)
+  food_data <-  food_data[!is.na(food_data$calories), ]
+  cal <- c(mean(food_data$calories))
+  person <- c(i)
+  df <- data.frame(person,cal)
+  df$i <- i  
+  datalist[[i]] <- df
+}
+final_data_healthy_cal= do.call(rbind, datalist)
+
+datalist = list()
+for(i in 1:20) {
+  if (i<10) {
+    path <- paste0(folder_location,"/healthy_subset/00",i, "/glucose.csv")
+  }
+  else {
+    path <- paste0(folder_location,"/healthy_subset/0",i, "/glucose.csv")
+  }
+  food_data<-data.frame(read.csv(path,header=T,sep=','))
+  food_data$glucose <- as.numeric(food_data$glucose)
+  food_data <-  food_data[!is.na(food_data$glucose), ]
+  cal <- c(mean(food_data$glucose))
+  person <- c(i)
+  df <- data.frame(person,cal)
+  df$i <- i  
+  datalist[[i]] <- df
+}
+
+final_data_healthy_glu= do.call(rbind, datalist)
+final_data_glu_cal_healthy = merge(x = final_data_healthy_glu, y = final_data_healthy_cal, by = "person")
+keeps <- c("person", "cal.x", "cal.y")
+final_data_glu_cal_healthy = final_data_glu_cal_healthy[keeps]
+names(final_data_glu_cal_healthy)[2] <- "glucose"
+names(final_data_glu_cal_healthy)[3] <- "calories"
+labels <- 'Healthy'
+final_data_glu_cal_healthy <- cbind(final_data_glu_cal_healthy, Person = labels)
+food_glu_final_df <- rbind(final_data_glu_cal_healthy,final_data_glu_cal_dia)
+write.csv(food_glu_final_df, "./data/individuals_glucose_food_intake.csv", row.names = FALSE)
+
+
+
