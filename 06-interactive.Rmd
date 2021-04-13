@@ -1,6 +1,8 @@
 
 # Interactive component
 
+<p>The interactive graphs below shows time series data of glucose value. Graph also captures influence of diet and insulin intake on glucose values.</p>
+
 <h2> Analysis of diabetes patients </h2>
 
 <p>Select a diabetes patient from the dropdown to see available glucose levels with respect to date and time of that observation</p>
