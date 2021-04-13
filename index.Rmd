@@ -14,5 +14,4 @@ We came across recent research on non-invasive type 1 diabetes management (https
 *	What is the difference in the glucose levels just before eating and 2 hours after eating? Extracting insights and comparing trends between healthy and diabetic patients.
 *	Explore correlations between changes in glucose level in the blood and ECG signals.
 *	Analyze the possibilities of activity levels and food intake having an influence on glycemic events.
-*	This dataset having subsets of healthy people and patients with diabetes, at a broader level we are interested to compare and explore the impact of Type 1 diabetes with the reference group i.e, characteristics of various measurements between the groups.
-*	Explore the impact of calories, food balance or food quality on the glucose levels.
+*	Explore the impact of calories, food balance or food quality on the glucose levels.This dataset having subsets of healthy people and patients with diabetes, we have compared how food intake affects glucose level.
