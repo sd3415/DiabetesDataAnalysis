@@ -4,8 +4,9 @@ data-transformation
 missing-values
 results
 understanding-the-sample-considered-for-this-study
-trends-in-glucose-levels
+assessing-glucose-levels-in-healthy-and-diabetic-patients
 does-changes-in-glucose-level-correlate-with-changes-in-ecg-signals
 impact-of-calories-and-food-balance-on-the-glucose-levels
 interactive-component
 conclusion
+limitations

@@ -1,2 +1,9 @@
 # Conclusion
 
+This work presents the analysis of D1NAMO dataset. The dataset focuses on monitoring health, activity and food intake measurements under everyday-life conditions in patients with and without diabetes type-1.
+
+Acquisition of data took place in everyday-life conditions with chest belt. Hence, the dataset has noisy parts as well as missing data. This makes the dataset ideal for the development and evaluation of algorithms for wearable healthcare systems.
+
+# Limitations
+
+Data is inconsistent regarding annotated 
