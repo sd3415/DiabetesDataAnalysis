@@ -304,6 +304,36 @@ datalist1[[j]] <- datalist[[i]]
 }
 sendor_complete_data= do.call(rbind, datalist1)
 sendor_complete_data[sendor_complete_data==0] <-- NA
+#diabetic people sensor data
+file_locations1 <- c(paste(folder_location,"/diabetes/","00",1:9,sep=""))
+j= 0
+datalist1 = list()
+for (file_path in file_locations1) {
+  j = j+1
+  x <- paste(file_path,"/sensor_data",sep="")
+  y <-list.dirs(path = x, full.names = TRUE, recursive = TRUE)
+  csv_files <- list.files(path = y,pattern = "*Summary.csv",full.names = TRUE)
+  i = 0
+  datalist = list()
+  for (k in csv_files){
+    sensor_data <- data.frame(read.csv(k,sep=","))
+    df <- sensor_data[c("Time", "HR", "BR", "Activity", "ECGAmplitude")]
+    df <- df %>%
+      mutate(Time = substr(Time, 1, 16))
+    df <- df %>%
+      group_by(Time) %>%
+      summarise(HR = max(HR), BR = max(BR),
+                Activity = max(Activity), ECGAmplitude = max(ECGAmplitude))
+    i =i+1
+    datalist[[i]] <- df
+    
+  }
+  datalist1[[j]] <- datalist[[i]]
+}
+sendor_complete_data_dia= do.call(rbind, datalist1)
+sendor_complete_data_dia[sendor_complete_data_dia==0] <-- NA
+sendor_complete_data <- rbind(sendor_complete_data_dia,sendor_complete_data)
+str(sendor_complete_data)
 write.csv(sendor_complete_data, "./data/sensor_data.csv", row.names = FALSE)
 
 

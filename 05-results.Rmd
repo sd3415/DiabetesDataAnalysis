@@ -23,7 +23,8 @@ diabetes_df$BMI <- with(diabetes_df, ((Weight_kg/ ((Height_cm)^(2))))*10000)
 ggplot(data = diabetes_df, aes(x = BMI, fill = Diabetes)) + 
     geom_histogram(color = "white", bins = 20) + 
     labs(title = "BMI by Diabetes Status",
-         x = "BMI", fill = "Diabetes" )  
+         x = "BMI", fill = "Diabetes" )+
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
 Here is a faceted histograms plot to understand the relationships between Age, Gender and Health Status. It can be observed that this dataset is a bit biased towards younger and middle age men. We have only two people with age greater than 50 years. Both of them being female and diabetic. Young males with diabetes are present in the dataset whereas young females (less than 35 years) are mostly healthy. 
@@ -41,8 +42,8 @@ ggplot(data = df, aes(x = Age, fill = Gender)) +
     labs(title = "Age by Gender, Overall Health for Type-1 Diabetes ",
          x = "Age") + 
     guides(fill = FALSE) +
-    facet_grid( Diabetes~ Gender)
-
+    facet_grid( Diabetes~ Gender)+
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
 
@@ -199,8 +200,9 @@ Having food information for each patient as well as their physiological signals 
 
 ```{r}
 food_data <- read.csv('data/individuals_food_balanced_unbalanced.csv', na.strings = "")
+lnames <- list(Category = c("Balanced Food", "Unbalanced Food"))
 vcd::mosaic(Category ~ Person, 
-            highlighting_fill = c("grey90", "cornflowerblue"),
+            highlighting_fill = c("grey90", "cornflowerblue"),set_labels=lnames,
             food_data)
 ```
 

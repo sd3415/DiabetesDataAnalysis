@@ -114,9 +114,15 @@ We can observe that healthy people recorded their glucose readings for all 4 day
 One of the diabetic patient recorded glucose values for two days. In general, the glucose recordings doesn’t have major missing values.
 <img src="finalproj_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <ul>
-<li>Some people did not include pictures of all meals
-<img src="finalproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></li>
+<li>Analyzing missing values from wearable sensor data signals.</li>
 </ul>
+<p>Dataframe is construced containing sensors value for all the people. The first few rows correspond to diabetic patients and the latter half contains the healthy people data.</p>
+<p>The blue cells represent the missing values. Heart rate and breathing rate have all it’s missing values at the end of our dataset which comprises of healthy people. For variable ECG the missing values are distributed all over the healthy and diabetic patient.</p>
+<p>The red bar below is the amount of missing values for corresponding variables. We can also notice that ECG is missing for all the recordings in the middle of dataframe. We have very few complete row observations in healthy dataset.</p>
+<p>The following information reinforces what paper claims that some people forgot to write down measured values, or had problems with the sensors.</p>
+<p>In our case missing values and noisy data is effective and make the dataset even useful. As these problems naturally occur in every healthcare system including wearable devices and people, so these issues would have to be dealt with. This added complexity of dealing with these different parameters, it is important to take into account the potentially missing and noisy data that is commonly acquired under non-clinical conditions.</p>
+<p>Evaluating missing values highlights the quality of the dataset and shows its credibility in being used effectively for health monitoring.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 
 </div>
             </section>
