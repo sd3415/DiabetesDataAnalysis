@@ -47,7 +47,7 @@ ggplot(data = df, aes(x = Age, fill = Gender)) +
 ```
 
 
-## Trends in glucose levels
+## Assessing Glucose levels in Healthy and Diabetic Patients 
 
 To understand how the glucose measurement values vary before and after each meal, we can look at the boxplot of glucose levels grouped by different categories, in this data set there is a indicator for whether the measurement value is before or after the meal, for the healthy group data set.
 
