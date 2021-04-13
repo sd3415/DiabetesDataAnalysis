@@ -6,9 +6,22 @@ One person in the healthy people subset of this data set has diabetes type 1, he
 
 After downloading the original data set from data source (https://zenodo.org/record/1421616#.X3G7wpMzadY), and then un-compressing the folder, we get a huge data of about ~ 64 GB in size, so we are only including the relevant data files used here after pre-processing as described below.
 
+The fact that the dataset has been acquired in real-life conditions, with a wearable device, opens opportunities for analysis which require various pre-processing algorithms such as for cleaning or aggregating signals. 
+
+Different filtering and pre-processing techniques was required, depending on the analysis. In some cases, excessive cleaning was done to eliminate noisy signal features.
+
 Please refer to pre-process_script.R file in the github repo for data transformation code that generates data files used in this present analysis.
 
 Data transformation steps:
 
  - In the original data set used for this analysis, data for each person considered in the study is given separately in different folders. We have started with aggregating the relevant data for the analysis here, for example we have put together glucose measurements of all the people in healthy group into a single .csv file adding a column indicating patient number for reference, similarly aggregated all the glucose measurements data of diabetes patients into a single .csv file
  - As described later in the results chapter, we are interested in looking at changes in glucose levels correlation with changes in other measurements, for that purpose we have taken sensor data for diabetes patient number 9, and aggregated the results to have a record for each minute using the maximum value recorded by the sensor during that minute, so as to combine these results with glucose levels later in the analysis
+ - In order to look at eating habits among healthy and diabetic patients, we took weighted average of number of times a person consumes balanced and unbalanced diet in a day.
+ - We calculated food quality of meals being consumed by a person by creating one hot encoding of categorical data (Balanced\Unbalanced diet) and then taking mean. Giving us the food quality in the range of [0,1].
+ - To check the relationship between glucose level, calories and food quality for each individual, mean of these values were calculated by aggregating all the observations made for that particular person.
+ - Since a higher BMI raises the risk of having uncontrolled diabetes and complications related to it. We analyzed the impact of BMI on a person belonging to healthy or diabetic category. Since in clinical data we had height and weight of people who participated in this study, we calculated BMI using the equation ((Weight)/(Height)^2)* 10,000. The height was given in cm and weight in kg. 
+ - We cleaned the data containing food data. Some of the annotations of food items was entered in wrong column. Hence, we had some instances where we extracted numeric values of calories from text data.
+ - We wrote a function to search files nested in variable number of directories containing summary of sensor data. We used pattern search to combine file names pertaining to one person. The dataset created equipped us to analyze the missing pattern among the sensors data.
+ - Found number of days a person recorded his/her readings by grouping the timeseries data on person id and extracting dates from it. It helped us to analyze missing values in glucose recordings.
+ 
+
