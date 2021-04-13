@@ -10,3 +10,4 @@ impact-of-calories-and-food-balance-on-the-glucose-levels
 interactive-component
 conclusion
 limitations
+future-work

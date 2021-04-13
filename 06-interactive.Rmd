@@ -1,3 +1,340 @@
+
 # Interactive component
+
+<h2> Analysis of diabetes patients </h2>
+
+<p>Select a diabetes patient from the dropdown to see available glucose levels with respect to date and time of that observation</p>
+
+<p>Green points in the graph indicates events of "insulin" intake</p>
+
+<p>Hover on the green points to see corresponding insulin units intake at that timestamp</p>
+
+<label for="diabetes_patients">Choose a diabetes patient:</label>
+
+<select id="patients" onChange="onSelectionFunction()">
+  <option value="1">Select here:</option>
+  <option value="1">Patient 1</option>
+  <option value="2">Patient 2</option>
+  <option value="3">Patient 3</option>
+  <option value="4">Patient 4</option>
+  <option value="5">Patient 5</option>
+  <option value="6">Patient 6</option>
+  <option value="7">Patient 7</option>
+  <option value="8">Patient 8</option>
+  <option value="9">Patient 9</option>
+</select>
+
+<div id="myplot"></div>
+
+<script src="https://d3js.org/d3.v6.js"></script>
+<script>
+
+var total_width = 700;
+var total_height = 300;
+
+var margin = {top: 25, right: 0, bottom: 35, left: 45};
+var w = total_width - margin.left - margin.right;
+var h = total_height - margin.top - margin.bottom;
+
+d3.select("div#myplot")
+  .append("svg")
+  .attr("id", "plot1")
+  .attr("width", total_width)
+  .attr("height", total_height)
+
+var x_range = d3.scaleTime().range([0, w]);
+var y_range = d3.scaleLinear().range([h, 0]);
+  
+var glucoseValuesRead = function (d) {
+  return {
+    patient: d.patient,
+    datetime: d.datetime,
+    glucose: +d.glucose
+    }
+};
+
+var insulinValuesRead = function (d) {
+  return {
+    patient: d.patient,
+    datetime: d.datetime,
+    fast_insulin: +d.fast_insulin
+    }
+};
+
+var svg = d3.select("svg#plot1").append("g")
+
+
+onSelectionFunction = function() {
+
+  var patient_id = document.getElementById('patients').value;
+
+  svg.selectAll("g").remove()
+  svg.selectAll("circle").remove()
+
+  d3.csv("https://raw.githubusercontent.com/sd3415/DiabetesDataAnalysis/main/data/d3_plot_diabetes_glucose.csv", glucoseValuesRead)
+    .then(function(data) {
+
+    data = data.filter(d => d.patient === patient_id);
+
+    data.forEach(function(d) {
+      d.datetime = d3.timeParse("%Y-%m-%d %H:%M:%S")(d.datetime);
+      d.glucose = +d.glucose;
+    });
+
+    x_range.domain(d3.extent(data, function(d) { return d.datetime; }));
+    y_range.domain([0, d3.max(data, function(d) { return d.glucose; })]);
+
+    var xAxis = d3.axisBottom().scale(x_range);
+    var yAxis = d3.axisLeft().scale(y_range);
+
+    svg.selectAll("dot")
+      .data(data)
+      .enter()
+      .append("circle")
+      .attr("cx", function(d) { return x_range(d.datetime) + margin.left; })
+      .attr("cy", function(d) { return y_range(d.glucose) + margin.bottom; })
+      .attr("r", 1)
+      .attr("fill", "red")
+
+    svg.append("g")
+      .attr("class", "xAxis")
+      .attr("transform", `translate(${margin.left}, ${total_height - margin.bottom})`)
+      .call(xAxis);
+
+    svg.append("text")
+    .attr("text-anchor", "end")
+    .attr("x", w)
+    .attr("y", h + margin.bottom + margin.top)
+    .text("Date and Time of the observation");
+
+    svg.append("g")
+      .attr("class", "yAxis")
+      .attr("transform", `translate (${margin.left}, ${margin.top})`)
+      .call(yAxis);
+
+    svg.append("text")
+      .attr("text-anchor", "end")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -margin.left + 60)
+      .attr("x", -margin.top - 20)
+      .text("Glucose Level [mmol/l]")
+
+    d3.csv("https://raw.githubusercontent.com/sd3415/DiabetesDataAnalysis/main/data/d3_plot_diabetes_insulin.csv", insulinValuesRead)
+      .then(function(data) {
+
+      data = data.filter(d => d.patient === patient_id);
+
+      data.forEach(function(d) {
+        d.datetime = d3.timeParse("%Y-%m-%d %H:%M:%S")(d.datetime);
+        d.fast_insulin = +d.fast_insulin;
+      });
+
+      var tooltip = d3.select("#myplot").append("div")
+                        .style("position", "relative")
+                        .style("visibility", "hidden")
+                        .text("This is a tooltip")
+                        .style("color", "blue");
+
+
+      svg.selectAll("dot2")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("cx", function(d) { return d3.max([0, x_range(d.datetime)]) + margin.left; })
+        .attr("cy", 265)
+        .attr("r", 3.5)
+        .attr("fill", "green")
+        .on("mouseover", function(event, d) {
+            tooltip.text(`Patient took fast insulin of ${d.fast_insulin} units`);
+            return tooltip.style("visibility", "visible");
+          })
+        .on("mouseout", function() {return tooltip.style("visibility", "hidden");});
+      
+      })
+      .catch(function(error) {
+      console.log("There seems to be a problem in insulin values processing part")
+    });    
+    
+    })
+    .catch(function(error) {
+    console.log("There seems to be a problem in glucose values processing part")
+  });
+
+};
+
+</script>
+
+<h2> Analysis of healthy people </h2>
+
+<p>Select a healthy from the dropdown to see available glucose levels with respect to date and time of that observation</p>
+
+<p>Green points in the graph indicates events of "food" intake</p>
+
+<p>Hover on the green points to see corresponding calories and description of food intake at that timestamp</p>
+
+<label for="healthy_patients">Choose a healthy person:</label>
+
+<select id="healthy_people" onChange="onSelectionFunctionHealthy()">
+  <option value="1">Select here:</option>
+  <option value="1">Person 1</option>
+  <option value="2">Person 2</option>
+  <option value="3">Person 3</option>
+  <option value="4">Person 4</option>
+  <option value="5">Person 5</option>
+  <option value="6">Person 6</option>
+  <option value="7">Person 7</option>
+  <option value="8">Person 8</option>
+  <option value="9">Person 9</option>
+  <option value="10">Person 10</option>
+  <option value="11">Person 11</option>
+  <option value="12">Person 12</option>
+  <option value="13">Person 13</option>
+  <option value="14">Person 14</option>
+  <option value="15">Person 15</option>
+  <option value="16">Person 16</option>
+  <option value="17">Person 17</option>
+  <option value="18">Person 18</option>
+  <option value="19">Person 19</option>
+</select>
+
+<div id="myplot2"></div>
+
+<script>
+
+var total_width = 700;
+var total_height = 300;
+
+var margin = {top: 25, right: 0, bottom: 35, left: 45};
+var w = total_width - margin.left - margin.right;
+var h = total_height - margin.top - margin.bottom;
+
+d3.select("div#myplot2")
+  .append("svg")
+  .attr("id", "plot2")
+  .attr("width", total_width)
+  .attr("height", total_height)
+
+var x_range = d3.scaleTime().range([0, w]);
+var y_range = d3.scaleLinear().range([h, 0]);
+  
+var glucoseValuesRead = function (d) {
+  return {
+    patient: d.patient,
+    datetime: d.datetime,
+    glucose: +d.glucose
+    }
+};
+
+var foodInfoRead = function (d) {
+  return {
+    patient: d.patient,
+    datetime: d.datetime,
+    description: d.description,
+    calories: d.calories,
+    balance: d.balance,
+    quality: d.quality
+    }
+};
+
+var svg2 = d3.select("svg#plot2").append("g")
+
+
+onSelectionFunctionHealthy = function() {
+
+  var person_id = document.getElementById('healthy_people').value;
+
+  svg2.selectAll("g").remove()
+  svg2.selectAll("circle").remove()
+
+  d3.csv("https://raw.githubusercontent.com/sd3415/DiabetesDataAnalysis/main/data/d3_plot_glucose.csv", glucoseValuesRead)
+    .then(function(data) {
+
+    data = data.filter(d => d.patient === person_id);
+
+    data.forEach(function(d) {
+      d.datetime = d3.timeParse("%Y-%m-%d %H:%M")(d.datetime);
+      d.glucose = +d.glucose;
+    });
+
+    x_range.domain(d3.extent(data, function(d) { return d.datetime; }));
+    y_range.domain([0, d3.max(data, function(d) { return d.glucose; })]);
+
+    var xAxis = d3.axisBottom().scale(x_range);
+    var yAxis = d3.axisLeft().scale(y_range);
+
+    svg2.selectAll("dot")
+      .data(data)
+      .enter()
+      .append("circle")
+      .attr("cx", function(d) { return x_range(d.datetime) + margin.left; })
+      .attr("cy", function(d) { return y_range(d.glucose) + margin.bottom; })
+      .attr("r", 4)
+      .attr("fill", "red")
+
+    svg2.append("g")
+      .attr("class", "xAxis")
+      .attr("transform", `translate(${margin.left}, ${total_height - margin.bottom})`)
+      .call(xAxis);
+
+    svg2.append("text")
+    .attr("text-anchor", "end")
+    .attr("x", w)
+    .attr("y", h + margin.bottom + margin.top)
+    .text("Date and Time of the observation");
+
+    svg2.append("g")
+      .attr("class", "yAxis")
+      .attr("transform", `translate (${margin.left}, ${margin.top})`)
+      .call(yAxis);
+
+    svg2.append("text")
+      .attr("text-anchor", "end")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -margin.left + 60)
+      .attr("x", -margin.top - 20)
+      .text("Glucose Level [mmol/l]")
+
+    d3.csv("https://raw.githubusercontent.com/sd3415/DiabetesDataAnalysis/main/data/d3_plot_food.csv", foodInfoRead)
+      .then(function(data) {
+
+      data = data.filter(d => d.patient === person_id);
+
+      data.forEach(function(d) {
+        d.datetime = d3.timeParse("%Y-%m-%d %H:%M")(d.datetime);
+      });
+
+      var tooltip2 = d3.select("#myplot2").append("div")
+                        .style("position", "absolute")
+                        .style("visibility", "hidden")
+                        .text("This is a tooltip")
+                        .style("color", "blue");
+
+      svg2.selectAll("dot2")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("cx", function(d) { return d3.max([0, x_range(d.datetime)]) + margin.left; })
+        .attr("cy", 265)
+        .attr("r", 3.5)
+        .attr("fill", "green")
+        .on("mouseover", function(event, d) {
+            tooltip2.text(`Person took ${d.calories} calories of ${d.description} food`);
+            return tooltip2.style("visibility", "visible");
+          })
+        .on("mouseout", function() {return tooltip2.style("visibility", "hidden");});
+      
+      })
+      .catch(function(error) {
+      console.log("There seems to be a problem in insulin values processing part")
+    });    
+    
+    })
+    .catch(function(error) {
+    console.log("There seems to be a problem in glucose values processing part")
+  });
+
+};
+
+</script>
 
 
